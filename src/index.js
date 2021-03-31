@@ -1,12 +1,23 @@
+// Packages
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+// Components
+import App from './App/App';
+// Context
+import { GenderContextProvider } from './context/GenderContext';
+
+// Other
+import reportWebVitals from './other/reportWebVitals';
+
+// System Styles
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <GenderContextProvider>
+      <App />
+    </GenderContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
