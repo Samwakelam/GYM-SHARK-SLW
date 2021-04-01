@@ -1,6 +1,8 @@
 /* Card Styles */
 
 .card-container {
+  position: relative;
+
   max-width: 400px;
 
   border-radius: 10px;
@@ -9,7 +11,7 @@
   box-shadow: 0px 5px 20px 1px rgba(0, 0, 0, 0.5);
 }
 
-.card-container > div {
+.card-container > div.infomation-container {
   padding: 12px;
 }
 
@@ -22,6 +24,28 @@ div.transcript > ol > li {
 
   border-radius: 10px 10px 0 0;
 }
+
+div.img-container{
+  position: relative;
+  height: 400px;
+}
+
+div.img-container:after {
+  content: '';
+  transform-origin: 0;
+  transform: skewY(8.5deg);
+  z-index: 1;
+  
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 65px;
+  background: white;
+}
+
+
 
 /* Toggler styles */
 
@@ -71,4 +95,58 @@ div.transcript > ol > li {
 
 .slider.on:before {
   transform: translateX(31px);
+}
+
+
+/* Loader styles */
+
+.lds-ripple {
+  display: inline-block;
+  position: relative;
+  width: 160px;
+  height: 160px;
+
+  align-self: center;
+  justify-self: center;
+}
+
+.lds-ripple div {
+  position: absolute;
+  border: 5px solid white;
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1.5s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.lds-ripple div:nth-child(2) {
+  animation-delay: .75s;
+}
+
+@keyframes lds-ripple {
+  0% {
+    top: 75px;
+    left: 75px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 150px;
+    height: 150px;
+    opacity: 0;
+  }
+}
+
+/* placeholder styles  */
+
+div.img-placeholder {
+  display: flex;
+  height: 400px;
+  justify-content: center;
+}
+
+div.img-placeholder > .lds-ripple div {
+  border: 5px solid var(--greyBlueLight);
 }

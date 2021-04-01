@@ -42,6 +42,6 @@ img.body-area:active {
 }
 
 nav#exercise-navigation > div > ul > li > a.active > img.body-area.female,
-img.body-area:active {
+img.body-area.female:active {
   border: 5px solid var(--yellow);
 }
