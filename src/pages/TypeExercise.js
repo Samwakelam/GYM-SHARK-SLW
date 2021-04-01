@@ -25,7 +25,7 @@ const TypeExercise = ({exerciseData, type}) => {
       }
     });
     setTypeData(newArray);
-  }, [exerciseData]);
+  }, [exerciseData, type]);
 
 
   return (

@@ -2,6 +2,9 @@
 import React, { useContext } from 'react';
 import ReactHtmlParser from 'react-html-parser';
 
+// styles
+import './pages.css';
+
 // context
 import GenderContext from '../context/GenderContext';
 

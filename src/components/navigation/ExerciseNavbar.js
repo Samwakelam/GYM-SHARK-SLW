@@ -1,12 +1,17 @@
 // packages
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 
 // styles
 import './Nav.css';
 
+// context
+import GenderContext from '../../context/GenderContext';
+
 
 const ExerciseNavbar = () => {
+
+  const { gender } = useContext(GenderContext);
 
   return (
     <nav id='exercise-navigation'>
@@ -17,7 +22,7 @@ const ExerciseNavbar = () => {
               <img
                 alt='arms'
                 src={`${process.env.PUBLIC_URL}/assets/strength.png`}
-                className='body-area'
+                className={`body-area ${gender}`}
               />
             </NavLink>
           </li>
@@ -26,7 +31,7 @@ const ExerciseNavbar = () => {
               <img
                 alt='shoulders'
                 src={`${process.env.PUBLIC_URL}/assets/shoulder.png`}
-                className='body-area'
+                className={`body-area ${gender}`}
               />
             </NavLink>
           </li>
@@ -35,7 +40,7 @@ const ExerciseNavbar = () => {
               <img
                 alt='back'
                 src={`${process.env.PUBLIC_URL}/assets/back.png`}
-                className='body-area'
+                className={`body-area ${gender}`}
               />
             </NavLink>
           </li>
@@ -44,7 +49,7 @@ const ExerciseNavbar = () => {
               <img
                 alt='chest'
                 src={`${process.env.PUBLIC_URL}/assets/chest.png`}
-                className='body-area'
+                className={`body-area ${gender}`}
               />
             </NavLink>
           </li>
@@ -53,7 +58,7 @@ const ExerciseNavbar = () => {
               <img
                 alt='core'
                 src={`${process.env.PUBLIC_URL}/assets/torso.png`}
-                className='body-area'
+                className={`body-area ${gender}`}
               />
             </NavLink>
           </li>
@@ -62,7 +67,7 @@ const ExerciseNavbar = () => {
               <img
                 alt='legs'
                 src={`${process.env.PUBLIC_URL}/assets/legs.png`}
-                className='body-area'
+                className={`body-area ${gender}`}
               />
             </NavLink>
           </li>
