@@ -1,0 +1,24 @@
+/* Card Styles */
+
+.card-container {
+  max-width: 400px;
+
+  border-radius: 10px;
+  margin: 12px;
+  background-color: white;
+  box-shadow: 0px 5px 20px 1px rgba(0, 0, 0, 0.5);
+}
+
+.card-container > div {
+  padding: 12px;
+}
+
+div.transcript > ol > li {
+  margin: 12px 0;
+}
+
+.exercise-img {
+  max-width: 100%;
+
+  border-radius: 10px 10px 0 0;
+}
