@@ -1,0 +1,7 @@
+section#exercise-content {
+  display: flex;
+  flex-wrap: wrap;
+
+  background-image: linear-gradient(to bottom right, var(--greyBlueDark), var(--greyBlueLight) );
+  padding: 12px;
+}

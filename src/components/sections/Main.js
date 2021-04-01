@@ -1,9 +1,12 @@
 // Packages
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { Route } from 'react-router-dom';
 
 // Styles
 import './sections.css';
+
+// context
+import GenderContext from '../../context/GenderContext';
 
 // functions
 import fetcher from '../../functions/fetcher';
@@ -16,6 +19,8 @@ import TypeExercise from '../../pages/TypeExercise';
 
 
 const Main = () => {
+
+  const { gender } = useContext(GenderContext);
 
   // state
   const [exerciseData, setExerciseData] = useState([]);
@@ -45,11 +50,11 @@ const Main = () => {
           src={`${process.env.PUBLIC_URL}/assets/gs-logo-long.png`}
           className='logo-long'
         />
-
-        <select name='bodyAreas' id='bodyAreas-filter' >
+        <h1 className={`${gender}`}>Exercise Library</h1>
+        {/* <select name='bodyAreas' id='bodyAreas-filter' >
           <option value='all' >All Areas</option>
           <option value='arms' >Arms</option>
-        </select>
+        </select> */}
       </section>
 
       <div>
@@ -86,7 +91,7 @@ const Main = () => {
       </div>
 
     </main>
-  )
+  );
 }
 
 export default Main;

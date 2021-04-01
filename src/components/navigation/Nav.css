@@ -26,4 +26,22 @@ img.body-area {
 
   border-radius: 5px;
   background-color: var(--grey);
+
+  transition: .4s;
+}
+
+img.body-area:hover {
+  transform: translateX(20px);
+  transition: .4s;
+}
+
+nav#exercise-navigation > div > ul > li > a.active > img.body-area,
+img.body-area:active {
+  border: 5px solid var(--blue);
+  transition: .1s;
+}
+
+nav#exercise-navigation > div > ul > li > a.active > img.body-area.female,
+img.body-area:active {
+  border: 5px solid var(--yellow);
 }

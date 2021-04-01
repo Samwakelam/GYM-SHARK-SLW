@@ -22,6 +22,8 @@ main > div {
 
 section#filter {
   position: relative;
+  display: flex;
+  align-items: flex-end;
 
   min-height: 80px;
   padding: 12px;
@@ -30,12 +32,14 @@ section#filter {
   box-shadow: 0px 6px 20px 1px rgba(0, 0, 0, 0.5);
 }
 
-section#exercise-content {
-  display: flex;
-  flex-wrap: wrap;
+section#filter > h1 {
+  margin-bottom: 0;
+  color: var(--blue);
+  transform: translateY(5px);
+}
 
-  background-image: linear-gradient(to bottom right, var(--greyBlueDark), var(--greyBlueLight) );
-  padding: 12px;
+section#filter > h1.female {
+  color: var(--yellow);
 }
 
 .logo-long {
