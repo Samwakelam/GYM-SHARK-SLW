@@ -17,6 +17,8 @@ const GenderContextProvider = ({children}) => {
     setGender('female');
   }
 
+  // console.log('gender =', gender);
+
   return (
     <GenderContext.Provider value={{ gender, genderMale, genderFemale }} >
       {children}
