@@ -1,9 +1,9 @@
 header {
-  background-color: var(--grey);
-  box-shadow: 0px 5px 20px 1px rgba(0, 0, 0, 0.5);
-
-  min-height: 40px;
   position: relative;
+
+  background-color: var(--grey);
+  min-height: 40px;
+  z-index: 1;
 }
 
 footer {
@@ -13,11 +13,31 @@ footer {
 }
 
 main {
+  min-height: calc(100vh - 90px);
+}
+
+main > div {
+  display: flex;
+}
+
+section#filter {
+  position: relative;
+
+  min-height: 80px;
+  padding: 12px;
+  
+  background-color: white;
+  box-shadow: 0px 6px 20px 1px rgba(0, 0, 0, 0.5);
+}
+
+section#exercise-content {
   display: flex;
   flex-wrap: wrap;
-  
-  min-height: calc(100vh - 90px);
-  padding: 12px;
 
   background-image: linear-gradient(to bottom right, var(--greyBlueDark), var(--greyBlueLight) );
+  padding: 12px;
+}
+
+.logo-long {
+  height: 100px;
 }

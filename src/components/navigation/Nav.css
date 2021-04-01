@@ -1,0 +1,29 @@
+nav#exercise-navigation {
+
+  background-color: white;
+  white-space: nowrap;
+}
+
+nav#exercise-navigation > div {
+  display: block;
+  position: sticky;
+  top: 24px;
+}
+
+nav#exercise-navigation > div > ul {
+  padding: 0 0 0 20px;
+  margin: 24px 12px 12px 6px;
+}
+
+nav#exercise-navigation > div > ul > li {
+  margin: 6px 0;
+  list-style-type: none;
+}
+
+img.body-area {
+  max-height: 75px;
+  max-width: 75px;
+
+  border-radius: 5px;
+  background-color: var(--grey);
+}
