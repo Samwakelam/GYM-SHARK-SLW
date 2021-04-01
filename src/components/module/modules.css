@@ -22,3 +22,53 @@ div.transcript > ol > li {
 
   border-radius: 10px 10px 0 0;
 }
+
+/* Toggler styles */
+
+.switch {
+  position: relative;
+  display: inline-block;
+
+  width: 62px;
+  height: 30px;
+  margin: 6px;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  border-radius: 15px;
+  background-color: var(--blue);
+  height: 20px;
+  margin: 5px 1px;
+
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+
+  height: 30px;
+  width: 30px;
+  left: 0px;
+  bottom: -5px;
+
+  background-color: white;
+  border-radius: 50%;
+
+  transition: .4s;
+}
+
+.slider.on {
+  background-color: var(--yellow);
+}
+
+.slider.on:before {
+  transform: translateX(31px);
+}

@@ -1,9 +1,12 @@
 // Packages
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import ReactHtmlParser from 'react-html-parser';
 
 // Styles
 import './sections.css';
+
+// Context
+import GenderContext, { GenderContextProvider } from '../../context/GenderContext';
 
 // functions
 import fetcher from '../../functions/fetcher';
@@ -14,7 +17,11 @@ import Card from '../module/Card';
 
 const Main = () => {
 
+  // state
   const [exerciseData, setExerciseData] = useState([]);
+
+  // context
+  const { gender } = useContext(GenderContext);
 
   const fetchData = async () => {
 
@@ -43,7 +50,7 @@ const Main = () => {
           <Card key={exercise?.id} bodyAreas={exercise?.bodyAreas}>
             <img
               alt='exercise'
-              src={exercise?.male.image}
+              src={gender === 'male' ? exercise?.male.image : exercise?.female.image}
               className='exercise-img'
             />
             <div>

@@ -2,15 +2,14 @@ header {
   background-color: var(--grey);
   box-shadow: 0px 5px 20px 1px rgba(0, 0, 0, 0.5);
 
-  height: 40px;
-  z-index: 1;
+  min-height: 40px;
   position: relative;
 }
 
 footer {
   background-color: var(--grey);
 
-  height: 40px;
+  min-height: 40px;
 }
 
 main {
