@@ -1,5 +1,6 @@
 // Packages
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 // components
 import Header from '../components/sections/Header';
@@ -14,9 +15,11 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <Main />
-      <Footer />      
+      <Router >
+        <Header />
+        <Main />
+        <Footer />
+      </Router>
     </div>
   );
 
