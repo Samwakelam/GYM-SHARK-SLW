@@ -10,16 +10,20 @@ import PreviewCard from '../components/cards/PreviewCard';
 import Loader from '../components/module/Loader';
 import Modal from '../components/module/Modal';
 import MuscelGroups from '../components/forms/MuscelGroups';
+import SearchBar from '../components/forms/SearchBar';
 
 
 const TypeExercise = ({ exerciseData, type, numberOfX }) => {
 
-  // state
+  // data state
   const [typeData, setTypeData] = useState([]);
+  // modal State
   const [selectedExercise, setSelectedExercise] = useState('');
   const [openModal, setOpenModal] = useState(false);
   const [selectLocation, setSelectLocation] = useState('');
+  // forms state
   const [ selectValue, setSelectValue ] = useState('all');
+  const [ inputValue, setInputValue ] = useState('');
 
   const handleSelect = (offsetTop, exercise) => {
     // console.log('offsetTop =', offsetTop);
@@ -38,9 +42,15 @@ const TypeExercise = ({ exerciseData, type, numberOfX }) => {
     setSelectValue(value);
   }
 
+  const handleInputChange = (value) => {
+    setInputValue(value); 
+  }
+
   useEffect(() => {
+    // data handling - filter dependent on different filters
     let firstArray = [];
     let secondArray = [];
+    let thirdArray = [];
     exerciseData.forEach((exercise) => {
       // console.log('exercise includes Arms =', exercise.bodyAreas.includes('Arms'));
       // .some() will iterate over the first array and check the includes for each item in the second array
@@ -56,9 +66,10 @@ const TypeExercise = ({ exerciseData, type, numberOfX }) => {
         secondArray = [...firstArray];
       }
     });
-    setTypeData(secondArray);
+    thirdArray = secondArray.filter((exercise) => exercise.name.includes(inputValue));
+    setTypeData(thirdArray);
     numberOfX(secondArray.length);
-  }, [exerciseData, type, numberOfX, selectValue]);
+  }, [exerciseData, type, numberOfX, selectValue, inputValue ]);
 
 
   return (
@@ -87,6 +98,8 @@ const TypeExercise = ({ exerciseData, type, numberOfX }) => {
         <Modal onClose={handleModalClose} openLocation={selectLocation}>
           <Card bodyAreas={selectedExercise?.bodyAreas} exercise={selectedExercise} />
         </Modal>}
+
+        <SearchBar onInputChange={handleInputChange} inputValue={inputValue} />
     </section>
   );
 }

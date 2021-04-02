@@ -16,8 +16,6 @@ import ExerciseNavbar from '../navigation/ExerciseNavbar';
 // pages
 import AllExercise from '../../pages/AllExercise';
 import TypeExercise from '../../pages/TypeExercise';
-// components
-import SearchBar from '../module/SearchBar';
 
 
 const Main = () => {
