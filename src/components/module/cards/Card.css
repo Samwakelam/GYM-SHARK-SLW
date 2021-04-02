@@ -1,0 +1,71 @@
+.card-container {
+  position: relative;
+
+  max-width: 400px;
+  height: fit-content;
+
+  border-radius: 10px;
+  margin: 12px;
+  background-color: white;
+  box-shadow: 0px 5px 20px 1px rgba(0, 0, 0, 0.5);
+}
+
+.card-container > div.img-container{
+  position: relative;
+  height: 400px;
+}
+
+.card-container > div.img-container:after {
+  content: '';
+  transform-origin: 0;
+  transform: skewY(8.5deg);
+  z-index: 1;
+  
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 65px;
+  background: white;
+}
+
+.exercise-img {
+  max-width: 100%;
+
+  border-radius: 10px 10px 0 0;
+}
+
+.card-container > div.infomation-container {
+  padding: 12px;
+}
+
+div.infomation-container > div.titles {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+div.infomation-container > div.titiles > h2 {
+  display: inline-block;
+}
+
+button.collapse {
+  background-color: white;
+  color: black;
+  border: unset;
+}
+
+/* card collapse */
+div.transcript {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+div.transcript > ol > li {
+  margin: 12px 0;
+}
+
+
+

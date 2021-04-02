@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 
 // syles
-import './modules.css';
+import './Toggler.css';
 
 
 const Toggler = ({onEnable}) => {

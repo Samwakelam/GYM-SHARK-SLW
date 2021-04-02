@@ -41,10 +41,26 @@ section#filter > h1 {
   transform: translateY(5px);
 }
 
+section#filter > h3 {
+  position: absolute;
+  right: 12px;
+
+  margin-bottom: 0;
+  transform: translateY(-5px);
+}
+
 section#filter > h1.female {
   color: var(--yellow);
 }
 
 .logo-long {
   height: 100px;
+}
+
+h3 > span.male {
+  color: var(--blue);
+}
+
+h3 > span.female {
+  color: var(--yellow);
 }
