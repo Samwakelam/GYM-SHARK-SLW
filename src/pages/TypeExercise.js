@@ -60,6 +60,7 @@ const TypeExercise = ({ exerciseData, type, numberOfX }) => {
     numberOfX(secondArray.length);
   }, [exerciseData, type, numberOfX, selectValue]);
 
+
   return (
     <section id='exercise-content'>
       <div>
@@ -83,7 +84,7 @@ const TypeExercise = ({ exerciseData, type, numberOfX }) => {
       </div>
 
       {openModal &&
-        <Modal onClose={handleModalClose} eventLocation={selectLocation}>
+        <Modal onClose={handleModalClose} openLocation={selectLocation}>
           <Card bodyAreas={selectedExercise?.bodyAreas} exercise={selectedExercise} />
         </Modal>}
     </section>

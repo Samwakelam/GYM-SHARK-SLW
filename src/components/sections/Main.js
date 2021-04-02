@@ -51,7 +51,7 @@ const Main = () => {
   return (
     <main>
 
-      <section id='filter'>
+      <section id='banner'>
         <img
           alt='gym shark branding'
           src={`${process.env.PUBLIC_URL}/assets/gs-logo-long.png`}

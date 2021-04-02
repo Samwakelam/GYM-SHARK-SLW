@@ -3,7 +3,7 @@ header {
 
   background-color: var(--grey);
   min-height: 40px;
-  z-index: 1;
+  z-index: 3;
 }
 
 footer {
@@ -23,10 +23,12 @@ main > div {
   flex-grow: 1;
 }
 
-section#filter {
-  position: relative;
+section#banner {
   display: flex;
   align-items: flex-end;
+
+  position: relative;
+  z-index: 2;
 
   min-height: 80px;
   padding: 12px;
@@ -35,13 +37,13 @@ section#filter {
   box-shadow: 0px 6px 20px 1px rgba(0, 0, 0, 0.5);
 }
 
-section#filter > h1 {
+section#banner > h1 {
   margin-bottom: 0;
   color: var(--blue);
   transform: translateY(5px);
 }
 
-section#filter > h3 {
+section#banner > h3 {
   position: absolute;
   right: 12px;
 
@@ -49,7 +51,7 @@ section#filter > h3 {
   transform: translateY(-5px);
 }
 
-section#filter > h1.female {
+section#banner > h1.female {
   color: var(--yellow);
 }
 
