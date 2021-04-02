@@ -16,6 +16,8 @@ import ExerciseNavbar from '../navigation/ExerciseNavbar';
 // pages
 import AllExercise from '../../pages/AllExercise';
 import TypeExercise from '../../pages/TypeExercise';
+// components
+import SearchBar from '../module/SearchBar';
 
 
 const Main = () => {
@@ -23,7 +25,8 @@ const Main = () => {
   const { gender } = useContext(GenderContext);
 
   // state
-  const [exerciseData, setExerciseData] = useState([]);
+  const [ exerciseData, setExerciseData ] = useState([]);
+  const [ exerciseNumber, setExerciseNumber ] = useState('');
 
   const fetchData = async () => {
     const fetchResponse = await fetcher();
@@ -37,6 +40,10 @@ const Main = () => {
       console.log('I did Unmount');
     }
   }, []);
+
+  const handleExerciseLength = (numberOfX) => {
+    setExerciseNumber(numberOfX);
+  }
 
   // console.log('exerciseData =', exerciseData);
   // console.log('exerciseData[0]?.transcript =', exerciseData[0]?.transcript, typeof exerciseData[0]?.transcript);
@@ -55,6 +62,7 @@ const Main = () => {
           <option value='all' >All Areas</option>
           <option value='arms' >Arms</option>
         </select> */}
+        <h3><span className={`${gender}`}>{exerciseNumber}</span> Exercises Shown.</h3>
       </section>
 
       <div>
@@ -65,29 +73,28 @@ const Main = () => {
         />
         <Route
           exact path='/arms'
-          render={(props) => <TypeExercise {...props} exerciseData={exerciseData} type={['Arms', 'Biceps']} />}
+          render={(props) => <TypeExercise {...props} exerciseData={exerciseData} type={['Arms', 'Biceps']} numberOfX={handleExerciseLength} />}
         />
         <Route
           exact path='/shoulders'
-          render={(props) => <TypeExercise {...props} exerciseData={exerciseData} type={['Shoulders']} />}
+          render={(props) => <TypeExercise {...props} exerciseData={exerciseData} type={['Shoulders']} numberOfX={handleExerciseLength} />}
         />
         <Route
           exact path='/back'
-          render={(props) => <TypeExercise {...props} exerciseData={exerciseData} type={['Back']} />}
+          render={(props) => <TypeExercise {...props} exerciseData={exerciseData} type={['Back']} numberOfX={handleExerciseLength} />}
         />
         <Route
           exact path='/chest'
-          render={(props) => <TypeExercise {...props} exerciseData={exerciseData} type={['Chest']} />}
+          render={(props) => <TypeExercise {...props} exerciseData={exerciseData} type={['Chest']} numberOfX={handleExerciseLength} />}
         />
         <Route
           exact path='/core'
-          render={(props) => <TypeExercise {...props} exerciseData={exerciseData} type={['Core']} />}
+          render={(props) => <TypeExercise {...props} exerciseData={exerciseData} type={['Core']} numberOfX={handleExerciseLength} />}
         />
         <Route
           exact path='/legs'
-          render={(props) => <TypeExercise {...props} exerciseData={exerciseData} type={['Legs', 'Calves', 'Glutes']} />}
+          render={(props) => <TypeExercise {...props} exerciseData={exerciseData} type={['Legs', 'Calves', 'Glutes']} numberOfX={handleExerciseLength} />}
         />
-
       </div>
 
     </main>

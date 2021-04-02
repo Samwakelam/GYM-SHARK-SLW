@@ -9,7 +9,7 @@ import './pages.css';
 import GenderContext from '../context/GenderContext';
 
 // components
-import Card from '../components/module/Card';
+import Card from '../components/module/cards/Card';
 
 
 const AllExercise = ({exerciseData}) => {

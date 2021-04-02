@@ -2,7 +2,7 @@
 import React from 'react';
 
 // styles 
-import './modules.css';
+import './Loader.css';
 
 
 const Loader = () => {

@@ -1,23 +1,32 @@
 // packages
-import React, { useContext, useEffect, useState } from 'react';
-import ReactHtmlParser from 'react-html-parser';
-import LazyLoad from 'react-lazyload';
-
-// context
-import GenderContext from '../context/GenderContext';
+import React, { useEffect, useState } from 'react';
 
 // components
-import Card from '../components/module/Card';
+import Card from '../components/module/cards/Card';
+import PreviewCard from '../components/module/cards/PreviewCard';
 import Loader from '../components/module/Loader';
-import Placeholder from '../components/module/Placeholder';
+import Modal from '../components/module/Modal';
 
 
-const TypeExercise = ({ exerciseData, type }) => {
+const TypeExercise = ({ exerciseData, type, numberOfX }) => {
 
   // state
   const [typeData, setTypeData] = useState([]);
-  // context 
-  const { gender } = useContext(GenderContext);
+  const [ selectedExercise, setSelectedExercise ] = useState('');
+  const [ openModal, setOpenModal ] = useState(false);
+  const [ selectLocation, setSelectLocation ] = useState('');
+  
+  const handleSelect = ( offsetTop, exercise ) => {
+    // console.log('offsetTop =', offsetTop);
+    // console.log('exercise chosen is: ', exercise.name);
+    setSelectedExercise(exercise);
+    setSelectLocation(Math.floor(offsetTop));
+    setOpenModal(true);
+  }
+
+  const handleClose = () => {
+    setOpenModal(false);
+  }
 
   useEffect(() => {
     let newArray = [];
@@ -29,36 +38,28 @@ const TypeExercise = ({ exerciseData, type }) => {
       }
     });
     setTypeData(newArray);
-  }, [exerciseData, type]);
-
+    numberOfX(newArray.length);
+  }, [exerciseData, type, numberOfX]);
 
   return (
     <section id='exercise-content'>
-      { exerciseData.length === 0
+      { typeData.length === 0
         ? <Loader />
         : typeData.map((exercise) => {
           return (
-            <Card key={exercise?.id} bodyAreas={exercise?.bodyAreas}>
-              <div className='img-container'>
-                <LazyLoad placeholder={ <Placeholder /> } offset={100} debounce={500}>
-                  <img
-                    alt='exercise'
-                    src={gender === 'male' ? exercise?.male.image : exercise?.female.image}
-                    className='exercise-img'
-                  />
-                </LazyLoad>
-              </div>
-              <div className='infomation-container'>
-                <p>{exercise?.bodyAreas}</p>
-                <h2>{exercise?.name}</h2>
-                <div className='transcript'>
-                  {ReactHtmlParser(exercise?.transcript)}
-                </div>
-              </div>
-            </Card>
+            <PreviewCard 
+              key={exercise?.id} 
+              bodyAreas={exercise?.bodyAreas} 
+              exercise={exercise}
+              onSelect={(offsetTop) => handleSelect( offsetTop, exercise)}
+            />
           );
         })
       }
+      {openModal && 
+        <Modal onClose={handleClose} eventLocation={selectLocation}>
+          <Card bodyAreas={selectedExercise?.bodyAreas} exercise={selectedExercise} />
+        </Modal>}
     </section>
   );
 }

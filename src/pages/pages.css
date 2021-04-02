@@ -5,9 +5,10 @@ section#exercise-content {
 
   justify-content: center;
   /* align-items: center; */
-
+  position: relative;
   min-height: 100%;
 
   background-image: linear-gradient(to bottom right, var(--greyBlueDark), var(--greyBlueLight) );
   padding: 12px;
 }
+

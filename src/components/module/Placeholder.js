@@ -8,10 +8,10 @@ import './modules.css';
 import Loader from './Loader';
 
 
-const Placeholder = () => {
+const Placeholder = ({ height, width }) => {
 
   return(
-    <div className='img-placeholder'>
+    <div className='img-placeholder' style={{ height: height, width: width }}>
       <Loader />
     </div>
   );
