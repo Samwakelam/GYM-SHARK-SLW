@@ -30,33 +30,6 @@ div.img-placeholder > .lds-ripple div {
   border: 5px solid var(--greyBlueLight);
 }
 
-/* searchBar styles */
 
-form#search-bar {
-  display: flex;
-  align-items: center;
-
-  position: fixed;
-  top: 87.5vh;
-  right: 5vw;
-  z-index: 2;
-
-  background-color: white;
-  border-radius: 100px;
-  box-shadow: 0 0 10px 1px var(--greyBlueLight);
-}
-
-form#search-bar > label {
-  padding: 15px;
-}
-
-input#exercise-search {
-  margin: 10px 15px;
-  border: unset;
-}
-
-input#exercise-search:focus {
-  outline: unset;
-}
 
 
