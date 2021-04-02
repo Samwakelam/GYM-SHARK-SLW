@@ -1,5 +1,7 @@
 nav#exercise-navigation {
-
+  position: relative;
+  z-index: 1;
+  
   background-color: white;
   white-space: nowrap;
 }

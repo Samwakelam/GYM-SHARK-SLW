@@ -51,17 +51,13 @@ const Main = () => {
   return (
     <main>
 
-      <section id='filter'>
+      <section id='banner'>
         <img
           alt='gym shark branding'
           src={`${process.env.PUBLIC_URL}/assets/gs-logo-long.png`}
           className='logo-long'
         />
         <h1 className={`${gender}`}>Exercise Library</h1>
-        {/* <select name='bodyAreas' id='bodyAreas-filter' >
-          <option value='all' >All Areas</option>
-          <option value='arms' >Arms</option>
-        </select> */}
         <h3><span className={`${gender}`}>{exerciseNumber}</span> Exercises Shown.</h3>
       </section>
 

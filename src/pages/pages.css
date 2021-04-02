@@ -1,14 +1,22 @@
 section#exercise-content {
-  display: flex;
-  flex-wrap: wrap;
   flex-grow: 1;
 
-  justify-content: center;
-  /* align-items: center; */
   position: relative;
   min-height: 100%;
 
   background-image: linear-gradient(to bottom right, var(--greyBlueDark), var(--greyBlueLight) );
   padding: 12px;
+}
+
+section#exercise-content > div:nth-child(1) {
+  display: flex;
+  justify-content: flex-end;
+}
+
+section#exercise-content > div:nth-child(2) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 

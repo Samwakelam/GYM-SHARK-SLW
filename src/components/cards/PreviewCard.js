@@ -6,9 +6,9 @@ import LazyLoad from 'react-lazyload';
 import './PreviewCard.css';
 
 // context
-import GenderContext from '../../../context/GenderContext';
+import GenderContext from '../../context/GenderContext';
 
-import Placeholder from '../Placeholder';
+import Placeholder from '../module/Placeholder';
 
 
 const PreviewCard = ({ bodyAreas, exercise, onSelect }) => {
@@ -39,6 +39,7 @@ const PreviewCard = ({ bodyAreas, exercise, onSelect }) => {
 
       <div className='information-container'>
         <h2>{exercise?.name}</h2>
+        <p>{bodyAreas}</p>
       </div>
 
     </article>
