@@ -9,9 +9,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './Card.css';
 
 // context
-import GenderContext from '../../../context/GenderContext';
+import GenderContext from '../../context/GenderContext';
 
-import Placeholder from '../Placeholder';
+import Placeholder from '../module/Placeholder';
 
 
 const Card = ({ bodyAreas, exercise }) => {

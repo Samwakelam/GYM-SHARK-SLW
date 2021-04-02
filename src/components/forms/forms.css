@@ -1,0 +1,23 @@
+/* MuscleGroups styls */
+select#bodyAreas-filter {
+  width: fit-content;
+  padding: 6px 12px;
+  margin: 20px 0 6px 0;
+
+  background-color: white;
+  border: unset;
+  border-radius: 100px;
+  box-shadow: 0 0 10px 1px var(--greyBlueLight);
+}
+
+select#bodyAreas-filter:focus {
+  outline: unset;
+}
+
+option.male:hover {
+  background-color: var(--blue);
+}
+
+option.female:hover {
+  background-color: var(--yellow);
+}

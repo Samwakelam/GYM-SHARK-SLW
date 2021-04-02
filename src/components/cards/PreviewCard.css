@@ -17,6 +17,7 @@
 
 .preview-card-container > div.information-container {
   display: flex;
+  flex-flow: column;
   align-items: center;
   justify-content: center;
 
