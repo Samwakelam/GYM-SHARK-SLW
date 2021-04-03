@@ -10,7 +10,7 @@ import fetcher from '../../functions/fetcher';
 // components
 import ExerciseNavbar from '../navigation/ExerciseNavbar';
 // pages
-import TypeExercise from '../../pages/TypeExercise';
+import Exercise from '../../pages/Exercise';
 import Home from '../../pages/Home';
 import Help from '../../pages/Help';
 import Favourites from '../../pages/Favourites';
@@ -59,38 +59,39 @@ const Main = () => {
           className='logo-long'
         />
         <h1 className={`${gender}`}>Exercise Library</h1>
-        <h3><span className={`${gender}`}>{exerciseNumber}</span> Exercises Shown</h3>
+        { pathname[1] === 'exercise' && <h3><span className={`${gender}`}>{exerciseNumber}</span> Exercises Shown</h3> }
+        
       </section>
 
       <div>
         { pathname[1] === 'exercise' && <ExerciseNavbar /> }
         <Route
           exact path='/exercise'
-          render={(props) => <TypeExercise {...props} exerciseData={exerciseData} type={['All']} numberOfX={handleExerciseLength} />}
+          render={(props) => <Exercise {...props} exerciseData={exerciseData} type={['All']} numberOfX={handleExerciseLength} />}
         />
         <Route
           exact path='/exercise/arms'
-          render={(props) => <TypeExercise {...props} exerciseData={exerciseData} type={['Arms', 'Biceps']} numberOfX={handleExerciseLength} />}
+          render={(props) => <Exercise {...props} exerciseData={exerciseData} type={['Arms', 'Biceps']} numberOfX={handleExerciseLength} />}
         />
         <Route
           exact path='/exercise/shoulders'
-          render={(props) => <TypeExercise {...props} exerciseData={exerciseData} type={['Shoulders']} numberOfX={handleExerciseLength} />}
+          render={(props) => <Exercise {...props} exerciseData={exerciseData} type={['Shoulders']} numberOfX={handleExerciseLength} />}
         />
         <Route
           exact path='/exercise/back'
-          render={(props) => <TypeExercise {...props} exerciseData={exerciseData} type={['Back']} numberOfX={handleExerciseLength} />}
+          render={(props) => <Exercise {...props} exerciseData={exerciseData} type={['Back']} numberOfX={handleExerciseLength} />}
         />
         <Route
           exact path='/exercise/chest'
-          render={(props) => <TypeExercise {...props} exerciseData={exerciseData} type={['Chest']} numberOfX={handleExerciseLength} />}
+          render={(props) => <Exercise {...props} exerciseData={exerciseData} type={['Chest']} numberOfX={handleExerciseLength} />}
         />
         <Route
           exact path='/exercise/core'
-          render={(props) => <TypeExercise {...props} exerciseData={exerciseData} type={['Core']} numberOfX={handleExerciseLength} />}
+          render={(props) => <Exercise {...props} exerciseData={exerciseData} type={['Core']} numberOfX={handleExerciseLength} />}
         />
         <Route
           exact path='/exercise/legs'
-          render={(props) => <TypeExercise {...props} exerciseData={exerciseData} type={['Legs', 'Calves', 'Glutes']} numberOfX={handleExerciseLength} />}
+          render={(props) => <Exercise {...props} exerciseData={exerciseData} type={['Legs', 'Calves', 'Glutes']} numberOfX={handleExerciseLength} />}
         />
         <Route
           exact path='/favourites'
