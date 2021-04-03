@@ -17,8 +17,14 @@ const ExerciseNavbar = () => {
     <nav id='exercise-navigation'>
       <div>
         <ul>
+
           <li className='nav-item'>
-            <NavLink to='/arms'>
+            <NavLink
+              to={{
+                pathname: '/exercise/arms',
+                aboutProps: { page: 'exercise' },
+              }}
+            >
               <img
                 alt='arms'
                 src={`${process.env.PUBLIC_URL}/assets/strength.png`}
@@ -27,8 +33,14 @@ const ExerciseNavbar = () => {
               <h3 className='nav-item'>Arms</h3>
             </NavLink>
           </li>
+
           <li className='nav-item'>
-            <NavLink to='/shoulders' >
+            <NavLink
+              to={{
+                pathname: '/exercise/shoulders',
+                aboutProps: { page: 'exercise' },
+              }}
+            >
               <img
                 alt='shoulders'
                 src={`${process.env.PUBLIC_URL}/assets/shoulder.png`}
@@ -37,8 +49,14 @@ const ExerciseNavbar = () => {
               <h3 className='nav-item'>Shoulders</h3>
             </NavLink>
           </li>
+
           <li className='nav-item'>
-            <NavLink to='/back' >
+            <NavLink
+              to={{
+                pathname: '/exercise/back',
+                aboutProps: { page: 'exercise' },
+              }}
+            >
               <img
                 alt='back'
                 src={`${process.env.PUBLIC_URL}/assets/back.png`}
@@ -47,8 +65,14 @@ const ExerciseNavbar = () => {
               <h3 className='nav-item'>Back</h3>
             </NavLink>
           </li>
+
           <li className='nav-item'>
-            <NavLink to='/chest'>
+            <NavLink
+              to={{
+                pathname: '/exercise/chest',
+                aboutProps: { page: 'exercise' },
+              }}
+            >
               <img
                 alt='chest'
                 src={`${process.env.PUBLIC_URL}/assets/chest.png`}
@@ -57,8 +81,14 @@ const ExerciseNavbar = () => {
               <h3 className='nav-item'>Chest</h3>
             </NavLink>
           </li>
+
           <li className='nav-item'>
-            <NavLink to='/core'>
+            <NavLink
+              to={{
+                pathname: '/exercise/core',
+                aboutProps: { page: 'exercise' },
+              }}
+            >
               <img
                 alt='core'
                 src={`${process.env.PUBLIC_URL}/assets/torso.png`}
@@ -67,8 +97,14 @@ const ExerciseNavbar = () => {
               <h3 className='nav-item'>Core</h3>
             </NavLink>
           </li>
+
           <li className='nav-item'>
-            <NavLink to='/legs'>
+            <NavLink
+              to={{
+                pathname: '/exercise/legs',
+                aboutProps: { page: 'exercise' },
+              }}
+            >
               <img
                 alt='legs'
                 src={`${process.env.PUBLIC_URL}/assets/legs.png`}
@@ -77,6 +113,7 @@ const ExerciseNavbar = () => {
               <h3 className='nav-item'>Legs</h3>
             </NavLink>
           </li>
+
         </ul>
       </div>
     </nav>

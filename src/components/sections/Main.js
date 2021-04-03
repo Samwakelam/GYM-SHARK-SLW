@@ -1,25 +1,28 @@
 // Packages
 import React, { useEffect, useState, useContext } from 'react';
-import { Route } from 'react-router-dom';
-
+import { Route, useLocation } from 'react-router-dom';
 // Styles
 import './sections.css';
-
 // context
 import GenderContext from '../../context/GenderContext';
-
 // functions
 import fetcher from '../../functions/fetcher';
-
+// components
 import ExerciseNavbar from '../navigation/ExerciseNavbar';
-
 // pages
-import AllExercise from '../../pages/AllExercise';
 import TypeExercise from '../../pages/TypeExercise';
+import Home from '../../pages/Home';
+import Help from '../../pages/Help';
+import Favourites from '../../pages/Favourites';
 
 
 const Main = () => {
 
+  const location = useLocation();
+  const pathname = location.pathname.split('/');
+  // console.log('location =', location);
+  // console.log('pathname', pathname);
+  
   const { gender } = useContext(GenderContext);
 
   // state
@@ -56,38 +59,50 @@ const Main = () => {
           className='logo-long'
         />
         <h1 className={`${gender}`}>Exercise Library</h1>
-        <h3><span className={`${gender}`}>{exerciseNumber}</span> Exercises Shown.</h3>
+        <h3><span className={`${gender}`}>{exerciseNumber}</span> Exercises Shown</h3>
       </section>
 
       <div>
-        <ExerciseNavbar />
+        { pathname[1] === 'exercise' && <ExerciseNavbar /> }
         <Route
-          exact path='/'
-          render={(props) => <AllExercise {...props} exerciseData={exerciseData} />}
+          exact path='/exercise'
+          render={(props) => <TypeExercise {...props} exerciseData={exerciseData} type={['All']} numberOfX={handleExerciseLength} />}
         />
         <Route
-          exact path='/arms'
+          exact path='/exercise/arms'
           render={(props) => <TypeExercise {...props} exerciseData={exerciseData} type={['Arms', 'Biceps']} numberOfX={handleExerciseLength} />}
         />
         <Route
-          exact path='/shoulders'
+          exact path='/exercise/shoulders'
           render={(props) => <TypeExercise {...props} exerciseData={exerciseData} type={['Shoulders']} numberOfX={handleExerciseLength} />}
         />
         <Route
-          exact path='/back'
+          exact path='/exercise/back'
           render={(props) => <TypeExercise {...props} exerciseData={exerciseData} type={['Back']} numberOfX={handleExerciseLength} />}
         />
         <Route
-          exact path='/chest'
+          exact path='/exercise/chest'
           render={(props) => <TypeExercise {...props} exerciseData={exerciseData} type={['Chest']} numberOfX={handleExerciseLength} />}
         />
         <Route
-          exact path='/core'
+          exact path='/exercise/core'
           render={(props) => <TypeExercise {...props} exerciseData={exerciseData} type={['Core']} numberOfX={handleExerciseLength} />}
         />
         <Route
-          exact path='/legs'
+          exact path='/exercise/legs'
           render={(props) => <TypeExercise {...props} exerciseData={exerciseData} type={['Legs', 'Calves', 'Glutes']} numberOfX={handleExerciseLength} />}
+        />
+        <Route
+          exact path='/favourites'
+          component={Favourites}
+        />
+        <Route
+          exact path='/help'
+          component={Help}
+        />
+        <Route
+          exact path='/'
+          component={Home}
         />
       </div>
 

@@ -1,3 +1,43 @@
+/* general styles */
+
+/* NavBar styles */
+nav#top-nav {
+  display: inline-block;
+}
+
+nav#top-nav > ul {
+  margin: 11px 0;
+}
+
+nav#top-nav > ul > li {
+  display: inline;
+  position: relative;
+
+  margin: 6px 0;
+  padding: 0 12px;
+  list-style-type: none;
+  font-size: 18px;
+}
+
+nav#top-nav > ul > li:last-child {
+  margin-right: 12px;
+}
+
+nav#top-nav > ul > li > a {
+  color: black;
+}
+
+nav#top-nav > ul > li > a.male.active,
+nav#top-nav > ul > li > a.male:hover {
+  color: var(--blue);
+}
+
+nav#top-nav > ul > li > a.female:hover, 
+nav#top-nav > ul > li > a.female.active {
+  color: var(--yellow);
+}
+
+/* exercise Nav styles  */
 nav#exercise-navigation {
   position: relative;
   z-index: 1;
@@ -13,7 +53,6 @@ nav#exercise-navigation > div {
 }
 
 nav#exercise-navigation > div > ul {
-  padding: 0 0 0 20px;
   margin: 24px 12px 12px 6px;
 }
 

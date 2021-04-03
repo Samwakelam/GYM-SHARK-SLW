@@ -1,5 +1,5 @@
 const getLocal = (key) => {
-  const localData = localStorage.getItem(key);
+  const localData = JSON.parse(localStorage.getItem(key));
   return localData;
 }
 
