@@ -1,9 +1,7 @@
 // packages
 import React, { useEffect, useState } from 'react';
-
 // styles
 import './pages.css';
-
 // components
 import Card from '../components/cards/Card';
 import PreviewCard from '../components/cards/PreviewCard';
@@ -22,8 +20,8 @@ const TypeExercise = ({ exerciseData, type, numberOfX }) => {
   const [openModal, setOpenModal] = useState(false);
   const [selectLocation, setSelectLocation] = useState('');
   // forms state
-  const [ selectValue, setSelectValue ] = useState('all');
-  const [ inputValue, setInputValue ] = useState('');
+  const [selectValue, setSelectValue] = useState('all');
+  const [inputValue, setInputValue] = useState('');
 
   const handleSelect = (offsetTop, exercise) => {
     // console.log('offsetTop =', offsetTop);
@@ -43,39 +41,49 @@ const TypeExercise = ({ exerciseData, type, numberOfX }) => {
   }
 
   const handleInputChange = (value) => {
-    setInputValue(value); 
+    setInputValue(value);
   }
 
   useEffect(() => {
-    // data handling - filter dependent on different filters
+    // data handling - filter dependent on different filters that have been selected
     let firstArray = [];
     let secondArray = [];
     let thirdArray = [];
-    exerciseData.forEach((exercise) => {
-      // console.log('exercise includes Arms =', exercise.bodyAreas.includes('Arms'));
-      // .some() will iterate over the first array and check the includes for each item in the second array
-      if (exercise.bodyAreas.some(area => type.includes(area))) {
-        firstArray.push(exercise);
-      }
-    });
+
+    if(type.includes('All')) {
+      firstArray = [...exerciseData];
+    } else {
+      exerciseData.forEach((exercise) => {
+        // console.log('exercise includes Arms =', exercise.bodyAreas.includes('Arms'));
+        // .some() will iterate over the first array and check the includes for each item in the second array
+        if (exercise.bodyAreas.some(area => type.includes(area))) {
+          firstArray.push(exercise);
+        }
+      });
+    }
+
     firstArray.forEach((exercise) => {
       // console.log('selectValue =', selectValue);
-      if( selectValue !== 'all' && exercise.bodyAreas.includes(selectValue)){
+      if (selectValue !== 'all' && exercise.bodyAreas.includes(selectValue)) {
         secondArray.push(exercise);
-      } else if(selectValue === 'all'){
+      } else if (selectValue === 'all') {
         secondArray = [...firstArray];
       }
     });
+
     thirdArray = secondArray.filter((exercise) => exercise.name.includes(inputValue));
+
     setTypeData(thirdArray);
-    numberOfX(secondArray.length);
-  }, [exerciseData, type, numberOfX, selectValue, inputValue ]);
+
+    numberOfX(typeData.length);
+
+  }, [exerciseData, type, numberOfX, selectValue, inputValue]);
 
 
   return (
     <section id='exercise-content'>
       <div>
-        <MuscelGroups onSelectChange={handleSelectChange} selectValue={selectValue} type={type}/>
+        <MuscelGroups onSelectChange={handleSelectChange} selectValue={selectValue} type={type} />
       </div>
 
       <div>
@@ -99,7 +107,7 @@ const TypeExercise = ({ exerciseData, type, numberOfX }) => {
           <Card bodyAreas={selectedExercise?.bodyAreas} exercise={selectedExercise} />
         </Modal>}
 
-        <SearchBar onInputChange={handleInputChange} inputValue={inputValue} />
+      <SearchBar onInputChange={handleInputChange} inputValue={inputValue} />
     </section>
   );
 }

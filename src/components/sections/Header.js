@@ -1,14 +1,12 @@
 // Packages
 import React, { useContext } from 'react';
-
 // Styles
 import './sections.css';
-
 // context
 import GenderContext from '../../context/GenderContext';
-
 // components
 import Toggler from '../module/Toggler';
+import Navbar from '../navigation/Navbar';
 
 
 const Header = () => {
@@ -27,6 +25,7 @@ const Header = () => {
   return (
     <header>
       <Toggler onEnable={handleEnable} />
+      <Navbar />
     </header>
   )
 }

@@ -1,5 +1,6 @@
 .preview-card-container {
   display: flex;
+  position: relative;
 
   width: 400px;
   height: 200px;
@@ -15,9 +16,18 @@
   cursor: pointer;
 }
 
-.preview-card-container > div.information-container {
+/* .preview-card-container > div.information-container {
   display: flex;
   flex-flow: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  padding: 12px;
+} */
+.preview-card-container > div.information-container {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
   align-items: center;
   justify-content: center;
 
@@ -28,9 +38,24 @@
 article.preview-card-container > div.information-container > h2 {
   font-size: 2em;
   text-align: center;
+  margin: 0;
 }
 
 .preview-exercise-img {
   width: 200px;
   border-radius: 10px 0 0 10px;
+}
+
+.preview-card-container > div.favourite-select {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+}
+
+.preview-card-container > div.favourite-select.true.male {
+  color: var(--blue);
+}
+
+.preview-card-container > div.favourite-select.true.female {
+  color: var(--yellow);
 }
