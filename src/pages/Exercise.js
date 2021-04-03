@@ -11,7 +11,7 @@ import MuscelGroups from '../components/forms/MuscelGroups';
 import SearchBar from '../components/forms/SearchBar';
 
 
-const TypeExercise = ({ exerciseData, type, numberOfX }) => {
+const Exercise = ({ exerciseData, type, numberOfX }) => {
 
   // data state
   const [typeData, setTypeData] = useState([]);
@@ -74,8 +74,7 @@ const TypeExercise = ({ exerciseData, type, numberOfX }) => {
     thirdArray = secondArray.filter((exercise) => exercise.name.includes(inputValue));
 
     setTypeData(thirdArray);
-
-    numberOfX(typeData.length);
+    numberOfX(thirdArray.length);
 
   }, [exerciseData, type, numberOfX, selectValue, inputValue]);
 
@@ -112,4 +111,4 @@ const TypeExercise = ({ exerciseData, type, numberOfX }) => {
   );
 }
 
-export default TypeExercise;
+export default Exercise;
