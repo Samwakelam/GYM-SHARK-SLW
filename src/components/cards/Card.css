@@ -89,7 +89,7 @@ div.transcript > ol > li {
   margin: 12px 0;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 400px) {
 
   .card-container > div.img-container{
     height: 342px;
@@ -105,4 +105,12 @@ div.transcript > ol > li {
     left: 24px;
     z-index: 1;
   }
+}
+
+@media screen and (min-width: 576.1px) and (max-width: 760px){
+
+  .card-container > div.img-container{
+    height: 400px;
+  }
+
 }

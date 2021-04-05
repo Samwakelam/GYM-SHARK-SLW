@@ -85,3 +85,22 @@ div#welcome-titles > button {
 #other-gymshark > div > button {
   margin: 0 12px;
 }
+
+@media screen and (max-width:576px) {
+  #other-gymshark {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr;
+    padding-bottom: 36px;
+  }
+  
+  #other-gymshark > h2 {
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 2;
+  }
+
+  #other-gymshark > div > button {
+    margin: 6px 12px;
+  }
+}
+
