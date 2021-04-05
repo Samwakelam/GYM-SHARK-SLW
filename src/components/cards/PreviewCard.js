@@ -23,7 +23,7 @@ const PreviewCard = ({ bodyAreas, exercise, onSelect }) => {
   const thisPreview = useRef(null);
   // context 
   const { gender } = useContext(GenderContext);
-  const { isMobileDevice, isSmallScreen, isTabletDevice, isDesktopDevice, isLargeScreen } = useContext(MediaContext);
+  const { isMobileDevice, isTabletDevice, isDesktopDevice, isLargeScreen } = useContext(MediaContext);
 
 
   const handelClick = () => {

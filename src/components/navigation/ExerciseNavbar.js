@@ -17,7 +17,7 @@ const ExerciseNavbar = () => {
   const [activeStyle, setActiveStyle] = useState('');
 
   const { gender } = useContext(GenderContext);
-  const { isMobileDevice, isSmallScreen, isTabletDevice } = useContext(MediaContext);
+  const { isMobileDevice } = useContext(MediaContext);
 
   const content = useRef(null);
 

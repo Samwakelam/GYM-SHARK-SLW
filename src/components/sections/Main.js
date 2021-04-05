@@ -62,7 +62,7 @@ const Main = () => {
             className='logo-long'
           />
           <h1 className={`${gender}`}>Exercise Library</h1>
-          {pathname[1] === 'exercise' && <h3><span className={`${gender}`}>{exerciseNumber}</span> Exercises Shown</h3>}
+          {(pathname[1] === 'exercise' || pathname[1] === 'favourites') && <h3><span className={`${gender}`}>{exerciseNumber}</span> Exercises Shown</h3>}
 
         </section>
       }
@@ -111,7 +111,7 @@ const Main = () => {
         />
         <Route
           exact path='/favourites'
-          component={Favourites}
+          render={(props) => <Favourites {...props} exerciseData={exerciseData} numberOfX={handleExerciseLength} />}
         />
         <Route
           exact path='/help'
