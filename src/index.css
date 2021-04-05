@@ -29,10 +29,10 @@ h1 {
   font-size: 3em;
 }
 
-button {
+/* button {
   color: white;
   background-color: black;
-}
+} */
 
 button:focus {
   outline: unset;

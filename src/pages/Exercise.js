@@ -1,7 +1,9 @@
 // packages
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 // styles
 import './pages.css';
+// context
+import MediaContext from '../context/MediaContext';
 // components
 import Card from '../components/cards/Card';
 import PreviewCard from '../components/cards/PreviewCard';
@@ -9,9 +11,12 @@ import Loader from '../components/module/Loader';
 import Modal from '../components/module/Modal';
 import MuscelGroups from '../components/forms/MuscelGroups';
 import SearchBar from '../components/forms/SearchBar';
+import ExerciseNavbar from '../components/navigation/ExerciseNavbar';
 
 
 const Exercise = ({ exerciseData, type, numberOfX }) => {
+
+  const { isMobileDevice } = useContext(MediaContext);
 
   // data state
   const [typeData, setTypeData] = useState([]);
@@ -81,6 +86,9 @@ const Exercise = ({ exerciseData, type, numberOfX }) => {
 
   return (
     <section id='exercise-content'>
+      {isMobileDevice &&
+        <ExerciseNavbar />
+      }
       <div>
         <MuscelGroups onSelectChange={handleSelectChange} selectValue={selectValue} type={type} />
       </div>
