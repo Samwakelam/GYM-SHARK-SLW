@@ -1,0 +1,25 @@
+section#favourites-content {
+  flex-grow: 1;
+
+  position: relative;
+  min-height: 100%;
+
+  background-image: linear-gradient(to bottom right, var(--greyBlueDark), var(--greyBlueLight) );
+  padding: 12px;
+}
+
+section#favourites-content > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+section#favourites-content > div > p {
+  width: 60vw;
+}
+
+section#favourites-content > div > button {
+  margin-top: 24px;
+}

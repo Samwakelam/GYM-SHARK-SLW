@@ -1,7 +1,7 @@
 // packages
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import { faDumbbell, faHeart as heartSolid, faHome } from "@fortawesome/free-solid-svg-icons";
+import { faDumbbell, faHome } from "@fortawesome/free-solid-svg-icons";
 import { faHeart as heartLine, faQuestionCircle } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // Styles

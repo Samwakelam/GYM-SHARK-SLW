@@ -18,16 +18,16 @@ const Footer = () => {
           <h5>Help</h5>
           <ul>
             <li className={`footer-item ${gender}`}>
-              <a href='https://uk.gymshark.com/pages/about-us' target='_blank'>About us</a>
+              <a href='https://uk.gymshark.com/pages/about-us' target='_blank' rel="noreferrer">About us</a>
             </li>
             <li className={`footer-item ${gender}`}>
-              <a href='https://careers.gymshark.com/' target='_blank'>Careers</a>
+              <a href='https://careers.gymshark.com/' target='_blank' rel="noreferrer">Careers</a>
             </li>
             <li className={`footer-item ${gender}`}>
-              <a href='https://central.gymshark.com/' target='_blank'>Gymshark Central</a>
+              <a href='https://central.gymshark.com/' target='_blank' rel="noreferrer">Gymshark Central</a>
             </li>
             <li className={`footer-item ${gender}`}>
-              <a href='https://support.gymshark.com/en-US' target='_blank'>FAQ</a>
+              <a href='https://support.gymshark.com/en-US' target='_blank' rel="noreferrer">FAQ</a>
             </li>
           </ul>
         </div>
@@ -56,7 +56,7 @@ const Footer = () => {
           alt='samantha wakelam'
           src={`${process.env.PUBLIC_URL}/assets/Logo-2017-v2.jpg`}
         />
-        <button className={`${gender}`} ><a target='_blank' href='https://samwakelam.github.io/20_REACT_PORTFOLIO_SLW/#/'>Portfolio</a></button>
+        <button className={`${gender}`} ><a target='_blank' href='https://samwakelam.github.io/20_REACT_PORTFOLIO_SLW/#/' rel="noreferrer">Portfolio</a></button>
         <div>
           <p>
             Graphics on this page have been created, and in some cases hand-drawn by Samantha Wakelam.
