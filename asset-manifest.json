@@ -1,22 +1,23 @@
 {
   "files": {
-    "main.css": "/GYM-SHARK-SLW/static/css/main.abd9d793.chunk.css",
-    "main.js": "/GYM-SHARK-SLW/static/js/main.67b634a5.chunk.js",
-    "main.js.map": "/GYM-SHARK-SLW/static/js/main.67b634a5.chunk.js.map",
-    "runtime-main.js": "/GYM-SHARK-SLW/static/js/runtime-main.9386e6cb.js",
-    "runtime-main.js.map": "/GYM-SHARK-SLW/static/js/runtime-main.9386e6cb.js.map",
-    "static/js/2.601e82ba.chunk.js": "/GYM-SHARK-SLW/static/js/2.601e82ba.chunk.js",
-    "static/js/2.601e82ba.chunk.js.map": "/GYM-SHARK-SLW/static/js/2.601e82ba.chunk.js.map",
-    "static/js/3.b6d4c3cf.chunk.js": "/GYM-SHARK-SLW/static/js/3.b6d4c3cf.chunk.js",
-    "static/js/3.b6d4c3cf.chunk.js.map": "/GYM-SHARK-SLW/static/js/3.b6d4c3cf.chunk.js.map",
+    "main.css": "/GYM-SHARK-SLW/static/css/main.3a4b1f4c.chunk.css",
+    "main.js": "/GYM-SHARK-SLW/static/js/main.d4764abb.chunk.js",
+    "main.js.map": "/GYM-SHARK-SLW/static/js/main.d4764abb.chunk.js.map",
+    "runtime-main.js": "/GYM-SHARK-SLW/static/js/runtime-main.4f4dcb08.js",
+    "runtime-main.js.map": "/GYM-SHARK-SLW/static/js/runtime-main.4f4dcb08.js.map",
+    "static/js/2.df75e07e.chunk.js": "/GYM-SHARK-SLW/static/js/2.df75e07e.chunk.js",
+    "static/js/2.df75e07e.chunk.js.map": "/GYM-SHARK-SLW/static/js/2.df75e07e.chunk.js.map",
+    "static/js/3.4639ee7d.chunk.js": "/GYM-SHARK-SLW/static/js/3.4639ee7d.chunk.js",
+    "static/js/3.4639ee7d.chunk.js.map": "/GYM-SHARK-SLW/static/js/3.4639ee7d.chunk.js.map",
     "index.html": "/GYM-SHARK-SLW/index.html",
-    "static/css/main.abd9d793.chunk.css.map": "/GYM-SHARK-SLW/static/css/main.abd9d793.chunk.css.map",
-    "static/js/2.601e82ba.chunk.js.LICENSE.txt": "/GYM-SHARK-SLW/static/js/2.601e82ba.chunk.js.LICENSE.txt"
+    "static/css/main.3a4b1f4c.chunk.css.map": "/GYM-SHARK-SLW/static/css/main.3a4b1f4c.chunk.css.map",
+    "static/js/2.df75e07e.chunk.js.LICENSE.txt": "/GYM-SHARK-SLW/static/js/2.df75e07e.chunk.js.LICENSE.txt",
+    "static/media/Home.css": "/GYM-SHARK-SLW/static/media/trainers.8fcd9860.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.9386e6cb.js",
-    "static/js/2.601e82ba.chunk.js",
-    "static/css/main.abd9d793.chunk.css",
-    "static/js/main.67b634a5.chunk.js"
+    "static/js/runtime-main.4f4dcb08.js",
+    "static/js/2.df75e07e.chunk.js",
+    "static/css/main.3a4b1f4c.chunk.css",
+    "static/js/main.d4764abb.chunk.js"
   ]
 }
