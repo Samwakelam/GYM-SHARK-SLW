@@ -130,8 +130,7 @@ button#collapsed-dash-menu {
 }
 
 #bar1.active-style {
-  transform: rotate(-45deg) translate(-9px, 6px);
-  transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 4px);
 }
 
 #bar2.active-style {
@@ -139,8 +138,7 @@ button#collapsed-dash-menu {
 }
 
 #bar3.active-style {
-  transform: rotate(45deg) translate(-8px, -8px);
-  transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-9px, -7px);
 }
 
 @media screen and (max-width: 576px){

@@ -1,7 +1,7 @@
 // packages
 import React, { useEffect, useState, useContext } from 'react';
 // styles
-import './pages.css';
+import './Exercise.css';
 // context
 import MediaContext from '../context/MediaContext';
 // components
