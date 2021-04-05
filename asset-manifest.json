@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/GYM-SHARK-SLW/static/css/main.2eeb95db.chunk.css",
-    "main.js": "/GYM-SHARK-SLW/static/js/main.6a825dcf.chunk.js",
-    "main.js.map": "/GYM-SHARK-SLW/static/js/main.6a825dcf.chunk.js.map",
+    "main.css": "/GYM-SHARK-SLW/static/css/main.135bc687.chunk.css",
+    "main.js": "/GYM-SHARK-SLW/static/js/main.7e1109a6.chunk.js",
+    "main.js.map": "/GYM-SHARK-SLW/static/js/main.7e1109a6.chunk.js.map",
     "runtime-main.js": "/GYM-SHARK-SLW/static/js/runtime-main.440b9cce.js",
     "runtime-main.js.map": "/GYM-SHARK-SLW/static/js/runtime-main.440b9cce.js.map",
     "static/js/2.df75e07e.chunk.js": "/GYM-SHARK-SLW/static/js/2.df75e07e.chunk.js",
@@ -10,14 +10,14 @@
     "static/js/3.6d6591e2.chunk.js": "/GYM-SHARK-SLW/static/js/3.6d6591e2.chunk.js",
     "static/js/3.6d6591e2.chunk.js.map": "/GYM-SHARK-SLW/static/js/3.6d6591e2.chunk.js.map",
     "index.html": "/GYM-SHARK-SLW/index.html",
-    "static/css/main.2eeb95db.chunk.css.map": "/GYM-SHARK-SLW/static/css/main.2eeb95db.chunk.css.map",
+    "static/css/main.135bc687.chunk.css.map": "/GYM-SHARK-SLW/static/css/main.135bc687.chunk.css.map",
     "static/js/2.df75e07e.chunk.js.LICENSE.txt": "/GYM-SHARK-SLW/static/js/2.df75e07e.chunk.js.LICENSE.txt",
     "static/media/Home.css": "/GYM-SHARK-SLW/static/media/trainers.8fcd9860.png"
   },
   "entrypoints": [
     "static/js/runtime-main.440b9cce.js",
     "static/js/2.df75e07e.chunk.js",
-    "static/css/main.2eeb95db.chunk.css",
-    "static/js/main.6a825dcf.chunk.js"
+    "static/css/main.135bc687.chunk.css",
+    "static/js/main.7e1109a6.chunk.js"
   ]
 }
