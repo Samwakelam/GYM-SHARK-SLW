@@ -1,0 +1,87 @@
+section#home-content {
+  position: relative;
+  width: 100%;
+}
+
+section#home-content > div > h2 {
+  font-size: 2em; 
+}
+
+.first-img {
+  background-image: url('../img/gymshark.png');
+  min-height: 700px;
+}
+
+#second-img{
+  background-image: url('../img/gs-weights.png');
+  min-height: 500px;
+}
+
+#third-img {
+  background-image: url('../img/trainers.png');
+  min-height: 500px;
+}
+
+.first-img,
+#second-img,
+#third-img {
+  position: relative;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* animation: translate 1s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll)*-1s); */
+} 
+
+/* @keyframes translate {
+  /* from{ background-position: 50% 170px; } 
+  to { background-position: 50% 0px; }
+} */
+
+
+#welcome-titles,
+#of-the-day,
+#other-gymshark {
+  position: relative;
+  text-align: center;
+  padding: 12px;
+}
+
+span.male{
+  color: var(--blue);
+}
+
+span.female{
+  color: var(--yellow);
+}
+
+p.welcome-text {
+  width: 80vw;
+  margin: 16px auto;
+}
+
+div#welcome-titles > button {
+  margin-bottom: 36px;
+}
+
+#other-gymshark {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding-bottom: 36px;
+}
+
+#other-gymshark > h2 {
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 4;
+}
+
+#other-gymshark > div > img {
+  width: 100%;
+  padding: 12px;
+}
+
+#other-gymshark > div > button {
+  margin: 0 12px;
+}

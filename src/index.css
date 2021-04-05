@@ -29,10 +29,28 @@ h1 {
   font-size: 3em;
 }
 
-/* button {
+button {
   color: white;
   background-color: black;
-} */
+  padding: 6px 12px;
+  border-radius: 5px;
+  border: unset;
+  outline: unset;
+  font-size: 16px;
+}
+
+button > a {
+  color: white;
+  text-decoration: none;
+}
+
+button.male:hover{
+  background-color: var(--blue);
+}
+
+button.female:hover{
+  background-color: var(--yellow);
+}
 
 button:focus {
   outline: unset;
