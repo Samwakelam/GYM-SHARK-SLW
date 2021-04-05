@@ -20,3 +20,17 @@ section#exercise-content > div:nth-child(2) {
   align-items: center;
 }
 
+/* isMobileDvice */
+@media screen and (max-width: 576px) {
+  
+  section#exercise-content {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+
+  select#bodyAreas-filter{
+    transform: translateX(20vw);
+  }
+
+}

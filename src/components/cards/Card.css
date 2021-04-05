@@ -13,7 +13,7 @@
 
 
 /* image styles  */
-.card-container > div.img-container{
+.card-container > div.img-container {
   position: relative;
   height: 400px;
 }
@@ -89,5 +89,20 @@ div.transcript > ol > li {
   margin: 12px 0;
 }
 
+@media screen and (max-width: 576px) {
 
+  .card-container > div.img-container{
+    height: 342px;
+  }
 
+  .card-container > div.img-container:after{
+    bottom: -10px;
+  }
+
+  .card-container > div.favourite-select {
+    position: absolute;
+    top: 325px;
+    left: 24px;
+    z-index: 1;
+  }
+}

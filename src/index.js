@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 import App from './App/App';
 // Context
 import { GenderContextProvider } from './context/GenderContext';
+import { MediaContextProvider } from './context/MediaContext';
 // Other
 import reportWebVitals from './other/reportWebVitals';
 // System Styles
@@ -13,9 +14,11 @@ import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <GenderContextProvider>
-      <App />
-    </GenderContextProvider>
+    <MediaContextProvider >
+      <GenderContextProvider>
+        <App />
+      </GenderContextProvider>
+    </MediaContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

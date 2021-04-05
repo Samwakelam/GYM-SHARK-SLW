@@ -5,6 +5,7 @@ import { Route, useLocation } from 'react-router-dom';
 import './sections.css';
 // context
 import GenderContext from '../../context/GenderContext';
+import MediaContext from '../../context/MediaContext';
 // functions
 import fetcher from '../../functions/fetcher';
 // components
@@ -22,12 +23,13 @@ const Main = () => {
   const pathname = location.pathname.split('/');
   // console.log('location =', location);
   // console.log('pathname', pathname);
-  
+
   const { gender } = useContext(GenderContext);
+  const { isMobileDevice, isSmallScreen, isTabletDevice, isDesktopDevice, isLargeScreen } = useContext(MediaContext);
 
   // state
-  const [ exerciseData, setExerciseData ] = useState([]);
-  const [ exerciseNumber, setExerciseNumber ] = useState('');
+  const [exerciseData, setExerciseData] = useState([]);
+  const [exerciseNumber, setExerciseNumber] = useState('');
 
   const fetchData = async () => {
     const fetchResponse = await fetcher();
@@ -52,19 +54,33 @@ const Main = () => {
   return (
     <main>
 
-      <section id='banner'>
-        <img
-          alt='gym shark branding'
-          src={`${process.env.PUBLIC_URL}/assets/gs-logo-long.png`}
-          className='logo-long'
-        />
-        <h1 className={`${gender}`}>Exercise Library</h1>
-        { pathname[1] === 'exercise' && <h3><span className={`${gender}`}>{exerciseNumber}</span> Exercises Shown</h3> }
-        
-      </section>
+      { (isDesktopDevice || isLargeScreen) &&
+        <section id='banner'>
+          <img
+            alt='gym shark branding'
+            src={`${process.env.PUBLIC_URL}/assets/gs-logo-long.png`}
+            className='logo-long'
+          />
+          <h1 className={`${gender}`}>Exercise Library</h1>
+          {pathname[1] === 'exercise' && <h3><span className={`${gender}`}>{exerciseNumber}</span> Exercises Shown</h3>}
+
+        </section>
+      }
+
+      { (isTabletDevice || isSmallScreen || isMobileDevice) &&
+        <section id='banner'>
+          <h1 className={`${gender}`}>Exercise Library</h1>
+          <img
+            alt='gym shark branding'
+            src={`${process.env.PUBLIC_URL}/assets/gs-logo-long.png`}
+            className='logo-long'
+          />
+          {pathname[1] === 'exercise' && <h3><span className={`${gender}`}>{exerciseNumber}</span> Exercises Shown</h3>}
+        </section>
+      }
 
       <div>
-        { pathname[1] === 'exercise' && <ExerciseNavbar /> }
+        {(pathname[1] === 'exercise' && !isMobileDevice ) && <ExerciseNavbar />}
         <Route
           exact path='/exercise'
           render={(props) => <Exercise {...props} exerciseData={exerciseData} type={['All']} numberOfX={handleExerciseLength} />}
