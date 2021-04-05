@@ -75,7 +75,7 @@ div#samantha-wakelam > div > p:first-child {
   margin-top: 0;
 }
 
-@media screen and (max-width:992px) {
+@media screen and (min-width: 360px) and (max-width:992px) {
   div#samantha-wakelam {
     display: grid;
     grid-template-columns: auto;
@@ -98,4 +98,40 @@ div#samantha-wakelam > div > p:first-child {
     grid-row: 3 / span 1;
   }
   
+}
+
+/* is extra small mobile / samsung galaxy */
+@media screen and (max-width: 360px) {
+
+  footer {
+    display: block;
+  }
+
+  div#samantha-wakelam {
+    grid-template-columns: 100px auto;
+    grid-template-rows: 100px auto;
+    row-gap: 12px;
+    column-gap: 12px;
+
+    border-left: unset;
+    border-top: 2px solid black;
+    width: 100%;
+
+    padding: 24px 12px 12px 12px;
+  }
+  
+  div#samantha-wakelam > img {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+  }
+  
+  div#samantha-wakelam > button {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+  }
+  
+  div#samantha-wakelam > div {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 2;
+  }
 }

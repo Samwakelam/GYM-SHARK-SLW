@@ -92,19 +92,21 @@ div.transcript > ol > li {
 @media screen and (max-width: 400px) {
 
   .card-container > div.img-container{
-    height: 342px;
+    height: 326px;
+    margin-bottom: 25px;
   }
 
   .card-container > div.img-container:after{
-    bottom: -10px;
+    bottom: -3vh;
   }
 
   .card-container > div.favourite-select {
     position: absolute;
-    top: 325px;
+    top: 305px;
     left: 24px;
     z-index: 1;
   }
+
 }
 
 @media screen and (min-width: 576.1px) and (max-width: 760px){

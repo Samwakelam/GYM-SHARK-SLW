@@ -75,7 +75,7 @@ const Main = () => {
             src={`${process.env.PUBLIC_URL}/assets/gs-logo-long.png`}
             className='logo-long'
           />
-          {pathname[1] === 'exercise' && <h3><span className={`${gender}`}>{exerciseNumber}</span> Exercises Shown</h3>}
+          {(pathname[1] === 'exercise' || pathname[1] === 'favourites') && <h3><span className={`${gender}`}>{exerciseNumber}</span> Exercises Shown</h3>}
         </section>
       }
 
