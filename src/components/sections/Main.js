@@ -119,7 +119,7 @@ const Main = () => {
         />
         <Route
           exact path='/'
-          component={Home}
+          render={(props) => <Home exerciseData={exerciseData} /> }
         />
       </div>
 

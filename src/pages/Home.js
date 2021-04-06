@@ -5,8 +5,11 @@ import { NavLink } from 'react-router-dom';
 import './Home.css';
 // context
 import GenderContext from '../context/GenderContext';
+// components
+import ExerciseODay from '../components/module/ExerciseODay';
 
-const Home = () => {
+
+const Home = ({exerciseData}) => {
 
   // const [scrollPosition, setScrollPosition] = useState(0);
   // console.log('scrollPosition', scrollPosition);
@@ -63,6 +66,7 @@ const Home = () => {
 
       <div id='of-the-day'>
         <h2>Exercise of the day</h2>
+        <ExerciseODay exerciseData={exerciseData} />
       </div>
 
       <div 
