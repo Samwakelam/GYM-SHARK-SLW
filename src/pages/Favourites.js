@@ -62,10 +62,10 @@ const Favourites = ({exerciseData, numberOfX}) => {
       <>
         <h2> Whoops! You have no Favourite Exercises</h2>
         <p>
-          Go to the Exercises Page to choose form the Library of Exercises available. 
+          Go to the Exercises Page to choose from the Library of Exercises available. 
         </p>
         <p>
-          From there open an exercise by clicking on the prieview card and ticking the heart icon.
+          From there open an exercise by clicking on the preview card and ticking the heart icon.
         </p>
         <button className={`${gender}`}><NavLink to='/exercise' >Go To Exercises</NavLink></button>
         </>

@@ -1,0 +1,52 @@
+div#exercise-o-day-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+div#exercise-o-day-content > div.information-container,
+div#exercise-o-day-content > div.img-container {
+  width: 40vw;
+  height: 40vw;
+  background-color: var(--grey);
+  margin: 12px;
+}
+
+div#exercise-o-day-content img.exercise-img {
+  width: 100%;
+  border-radius: unset;
+}
+
+div#exercise-o-day-content > div.information-container {
+  text-align: start;
+  padding: 12px;
+  overflow-y: scroll;
+}
+
+div#exercise-o-day-content > div.information-container > h2 {
+  margin-top: 6px;
+}
+div#exercise-o-day-content > div > ol > li {
+  margin: 12px 0;
+}
+
+@media screen and (max-width: 760px) {
+  div#exercise-o-day-content > div.transcript {
+    width: 80vw;
+    height: 40vw;
+    background-color: var(--grey);
+    margin: 12px;
+  }
+
+  div#exercise-o-day-content > div.information-container {
+    text-align: start;
+    padding: 12px;
+    overflow-y: hidden;
+  }
+
+  div#exercise-o-day-content > div.information-container,
+  div#exercise-o-day-content > div.img-container {
+    width: 35vw;
+    height: 35vw;
+  }
+}
