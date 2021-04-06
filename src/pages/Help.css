@@ -36,6 +36,7 @@ div.help-container {
 
 div.help-container > div {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 12px;
 }
@@ -90,3 +91,4 @@ section#help-content p {
   width: 100%;
   text-align: left;
 }
+
