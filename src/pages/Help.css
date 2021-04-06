@@ -1,0 +1,92 @@
+
+section#help-content {
+  width: 100%;
+  background-image: url('../img/lifting-club.png');
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 12px;
+}
+
+section#help-content h2 {
+  color: black;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  font-size: 3em;
+  margin: 0.83em ;
+  text-align: center;
+  width: 1fr;
+}
+
+section#help-content h2.main {
+  width: 80%;
+  margin: 0 auto;
+}
+
+div.help-container {
+  /* background-image: url('../img/lifting-club-opaque.png'); */
+  background-color: rgba(255, 255, 255, 0.75);
+
+  width: 80%;
+  margin: 0 auto;
+  padding: 12px;
+  border-radius: 10px;
+}
+
+div.help-container > div {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.instructions-img {
+  border-radius: 10px;
+  width: 200px;
+  margin: 12px;
+}
+
+.instructions-img.half {
+  width: 100px;
+}
+
+.instructions-img.three.quaters {
+  width: 150px;
+}
+
+.instructions-img.twice {
+  width: 400px;
+}
+
+.instructions-icon {
+  border-radius: 10px;
+  width: 50px;
+  margin: 12px;
+}
+
+div.stack {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.explanation {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 12px;
+  max-width: 80%;
+  margin: 12px;
+}
+
+.centre {
+  margin: 12px auto;
+}
+
+section#help-content img.body-area {
+  margin: 0 6px;
+}
+
+section#help-content p {
+  width: 100%;
+  text-align: left;
+}

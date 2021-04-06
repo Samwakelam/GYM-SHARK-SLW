@@ -43,9 +43,7 @@ const Home = ({exerciseData}) => {
       <div 
         className='first-img' 
         // style={parallaxProp}
-      >
-
-      </div>
+      > </div>
 
       <div id='welcome-titles'>
         <h1><span className={`${gender}`}>Welcome</span> to the Exercise Library!</h1>
@@ -60,9 +58,7 @@ const Home = ({exerciseData}) => {
       <div 
         id='second-img' 
         // style={parallaxProp}
-      >
-
-      </div>
+      ></div>
 
       <div id='of-the-day'>
         <h2>Exercise of the day</h2>
@@ -72,9 +68,7 @@ const Home = ({exerciseData}) => {
       <div 
         id='third-img' 
         // style={parallaxProp}
-      >
-
-      </div>
+      ></div>
 
       <div id='other-gymshark'>
         <h2>More from gymshark</h2>
@@ -127,9 +121,7 @@ const Home = ({exerciseData}) => {
       <div 
         className='first-img' 
         // style={parallaxProp}
-      >
-
-      </div>
+      ></div>
     </section>
   );
 }
