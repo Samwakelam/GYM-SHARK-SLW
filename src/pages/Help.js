@@ -1,12 +1,17 @@
 // packages
-import React from 'react';
+import React, { useContext } from 'react';
 import ScrollAnimation from 'react-animate-on-scroll';
 // styles
 import './Help.css';
 import 'animate.css/animate.min.css';
+// context
+import MediaContext from '../context/MediaContext';
+
 
 
 const Help = () => {
+
+  const { isMobileDevice } = useContext(MediaContext);
 
   return (
     <section id='help-content' >
@@ -129,7 +134,7 @@ const Help = () => {
 
           <div className='explanation centre stack'>
             <p>
-              Preview cards give you an insite into each exercise in the Library, displaying:
+              Preview cards give you an insight into each exercise in the Library, displaying:
           </p>
             <ul>
               <li>Exercise image</li>
@@ -151,8 +156,8 @@ const Help = () => {
               className='instructions-icon'
             />
             <p>
-              The heart in the lower right corner of each card shows if you have favourited
-              the exercise; a solid heart means it is a favourite and can be found on the
+              The heart in the lower right corner of each card shows if you have marked
+              the exercise as favourite; a solid heart means it is a favourite and can be found on the
               favourites page. It cannot be selected from the Preview Card.
           </p>
           </div>
@@ -193,7 +198,7 @@ const Help = () => {
             </ul>
             <p>
               The card will open over the preview cards in view; clicking the overlay outside
-              of the card will close it again, retruning you to the previous view.
+              of the card will close it again, returning you to the previous view.
           </p>
             <div>
               <img
@@ -209,7 +214,7 @@ const Help = () => {
             </div>
             <p>
               The heart under the main image can be toggled on and off to save the exercise to
-              your favouritese list displayed on the favourites page.
+              your favourites list displayed on the favourites page.
           </p>
             <p>
               To view the instructions, click the chevron next to the exercise title.
@@ -231,7 +236,7 @@ const Help = () => {
             <img
               alt='exercise of the day'
               src={`${process.env.PUBLIC_URL}/assets/instructions/x-of-day.png`}
-              className='instructions-img twice'
+              className={`instructions-img ${ isMobileDevice ? '' : 'twice'}`}
             />
           </div>
           <p className='explanation centre'>
@@ -278,7 +283,7 @@ const Help = () => {
             />
           </div>
           <p className='explanation centre'>
-            The first display you are shown is all exercisesa in the Library. 
+            The first display you are shown is all exercises in the Library. 
             The icons in the menu to the left will navigate you to a page for 
             exercises targeting specific areas of the body. Each body area is 
             a bookmarkable page.
@@ -291,7 +296,7 @@ const Help = () => {
             />
           </div>
           <p className='explanation centre'>
-            The selector to the right will filter these options by muscel groups 
+            The selector to the right will filter these options by muscle groups 
             within exercise page you are currently on. This selector will show you 
             the muscle groups relevant to your current page. 
           </p>
