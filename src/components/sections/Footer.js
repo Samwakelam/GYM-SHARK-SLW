@@ -21,10 +21,10 @@ const Footer = () => {
               <a href='https://uk.gymshark.com/pages/about-us' target='_blank' rel="noreferrer">About us</a>
             </li>
             <li className={`footer-item ${gender}`}>
-              <a href='https://careers.gymshark.com/' target='_blank' rel="noreferrer">Careers</a>
+              <a href='https://central.gymshark.com/' target='_blank' rel="noreferrer">Gymshark Central</a>
             </li>
             <li className={`footer-item ${gender}`}>
-              <a href='https://central.gymshark.com/' target='_blank' rel="noreferrer">Gymshark Central</a>
+              <a href='https://careers.gymshark.com/' target='_blank' rel="noreferrer">Careers</a>
             </li>
             <li className={`footer-item ${gender}`}>
               <a href='https://support.gymshark.com/en-US' target='_blank' rel="noreferrer">FAQ</a>
@@ -39,13 +39,13 @@ const Footer = () => {
               <NavLink to='/' >Home</NavLink>
             </li>
             <li className={`footer-item ${gender}`}>
-              <NavLink to='/help' >Help</NavLink>
+              <NavLink to='/exercise' >Exercises</NavLink>
             </li>
             <li className={`footer-item ${gender}`}>
               <NavLink to='/favourites' >Favourites</NavLink>
             </li>
             <li className={`footer-item ${gender}`}>
-              <NavLink to='/exercise' >Exercises</NavLink>
+              <NavLink to='/help' >Help</NavLink>
             </li>
           </ul>
         </div>

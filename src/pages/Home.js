@@ -77,7 +77,7 @@ const Home = ({exerciseData}) => {
       </div>
 
       <div id='other-gymshark'>
-        <h2>more from gymshark</h2>
+        <h2>More from gymshark</h2>
 
         <div className='shop'>
           <img
@@ -105,7 +105,7 @@ const Home = ({exerciseData}) => {
             src={`${process.env.PUBLIC_URL}/assets/training-app.png`}
           />
           <button className={`${gender}`} >
-            <a href='https://gymshark.onelink.me/iy1s/ExploreIOS' target='_blank' rel="noreferrer" >IOS</a>
+            <a href='https://gymshark.onelink.me/iy1s/ExploreIOS' target='_blank' rel="noreferrer" >iOS</a>
           </button>
           <button className={`${gender}`} >
             <a href='https://gymshark.onelink.me/iy1s/ExploreAndroid' target='_blank' rel="noreferrer" >Android</a>

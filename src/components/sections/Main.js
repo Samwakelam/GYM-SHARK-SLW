@@ -25,7 +25,7 @@ const Main = () => {
   // console.log('pathname', pathname);
 
   const { gender } = useContext(GenderContext);
-  const { isMobileDevice, isSmallScreen, isTabletDevice, isDesktopDevice, isLargeScreen } = useContext(MediaContext);
+  const { isExtraSmall, isMobileDevice, isSmallScreen, isTabletDevice, isDesktopDevice, isLargeScreen } = useContext(MediaContext);
 
   // state
   const [exerciseData, setExerciseData] = useState([]);
@@ -50,7 +50,6 @@ const Main = () => {
 
   // console.log('exerciseData =', exerciseData);
   // console.log('exerciseData[0]?.transcript =', exerciseData[0]?.transcript, typeof exerciseData[0]?.transcript);
-
   return (
     <main>
 
@@ -72,7 +71,7 @@ const Main = () => {
           <h1 className={`${gender}`}>Exercise Library</h1>
           <img
             alt='gym shark branding'
-            src={`${process.env.PUBLIC_URL}/assets/gs-logo-long.png`}
+            src={isExtraSmall ? `${process.env.PUBLIC_URL}/assets/gs-logo.png` : `${process.env.PUBLIC_URL}/assets/gs-logo-long.png`}
             className='logo-long'
           />
           {(pathname[1] === 'exercise' || pathname[1] === 'favourites') && <h3><span className={`${gender}`}>{exerciseNumber}</span> Exercises Shown</h3>}

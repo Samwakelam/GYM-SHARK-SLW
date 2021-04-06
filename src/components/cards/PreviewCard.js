@@ -23,7 +23,7 @@ const PreviewCard = ({ bodyAreas, exercise, onSelect }) => {
   const thisPreview = useRef(null);
   // context 
   const { gender } = useContext(GenderContext);
-  const { isMobileDevice, isTabletDevice, isDesktopDevice, isLargeScreen } = useContext(MediaContext);
+  const { isMobileDevice, isTabletDevice, isSmallScreen, isDesktopDevice, isLargeScreen } = useContext(MediaContext);
 
 
   const handelClick = () => {
@@ -60,7 +60,7 @@ const PreviewCard = ({ bodyAreas, exercise, onSelect }) => {
         </LazyLoad>
       </div>
 
-      {(isTabletDevice || isMobileDevice) &&
+      {(isTabletDevice || isMobileDevice || isSmallScreen) &&
       <div className='exercise-title'>
         <h2>{exercise?.name}</h2>
       </div>
@@ -79,7 +79,7 @@ const PreviewCard = ({ bodyAreas, exercise, onSelect }) => {
         </div>
       }
 
-      {(isTabletDevice || isMobileDevice) &&
+      {(isTabletDevice || isMobileDevice || isSmallScreen) &&
         <div className='information-container'>
           <ul>
             {bodyAreas.map((area) => {

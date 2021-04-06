@@ -23,8 +23,10 @@ const ExerciseODay = ({ exerciseData }) => {
   const [contentHeight, setContentHeight] = useState('');
 
   const { gender } = useContext(GenderContext);
-  const { isMobileDevice, isSmallScreen, isTabletDevice, isDesktopDevice, isLargeScreen } = useContext(MediaContext);
+  const { isExtraSmall, isMobileDevice, isSmallScreen, isTabletDevice, isDesktopDevice, isLargeScreen } = useContext(MediaContext);
   const content = useRef(null);
+
+  const bodyAreas = exercise?.bodyAreas;
 
   const storedDate = getLocal('date');
   const oldDate = new Date(storedDate);
@@ -73,6 +75,9 @@ const ExerciseODay = ({ exerciseData }) => {
 
   return (
     <div id='exercise-o-day-content'>
+      { (isMobileDevice) &&
+          <h2>{exercise?.name}</h2>
+        }
       <div className='img-container'>
         <LazyLoad placeholder={<Placeholder height={'400px'} />} offset={100} debounce={500}>
           <img
@@ -83,9 +88,17 @@ const ExerciseODay = ({ exerciseData }) => {
         </LazyLoad>
       </div>
 
-      <div className='information-container'>
-        <h2>{exercise?.name}</h2>
-        <p>{exercise?.bodyAreas}</p>
+      <div className='information-container scroller'>
+        { (isSmallScreen || isTabletDevice || isDesktopDevice || isLargeScreen) &&
+          <h2>{exercise?.name}</h2>
+        }
+        <ul>
+          {bodyAreas && bodyAreas.map((area) => {
+            return (
+              <li key={area}>{`${area}`}</li>
+            );
+          })}
+        </ul>
         {(isTabletDevice || isDesktopDevice || isLargeScreen) &&
           ReactHtmlParser(exercise?.transcript)
         }
@@ -94,7 +107,7 @@ const ExerciseODay = ({ exerciseData }) => {
             className={`collapse ${activeState}`}
             onClick={toggelCollapse}
           >
-            More information <FontAwesomeIcon
+            {isExtraSmall ? 'More Info': 'More Information'} <FontAwesomeIcon
               icon={activeState === 'active' ? faChevronUp : faChevronDown}
             />
           </button>
@@ -102,9 +115,9 @@ const ExerciseODay = ({ exerciseData }) => {
       </div>
 
       { (isMobileDevice || isSmallScreen) &&
-        <div 
-          ref={content} 
-          className='transcript' 
+        <div
+          ref={content}
+          className='transcript'
           style={{ maxHeight: `${contentHeight}` }}>
           {ReactHtmlParser(exercise?.transcript)}
         </div>

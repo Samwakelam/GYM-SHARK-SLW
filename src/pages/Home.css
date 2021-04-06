@@ -83,9 +83,11 @@ div#welcome-titles > button {
 }
 
 #other-gymshark > div > button {
-  margin: 0 12px;
+  margin: 6px 12px;
 }
 
+
+/* isMobileDevice */
 @media screen and (max-width:576px) {
   #other-gymshark {
     display: grid;
@@ -98,9 +100,43 @@ div#welcome-titles > button {
     grid-row: 1 / span 1;
     grid-column: 1 / span 2;
   }
+}
 
-  #other-gymshark > div > button {
-    margin: 6px 12px;
+@media screen and (orientation: landscape) {
+  .first-img {
+    background-image: url('../img/gymshark.png');
+    min-height: 700px;
+  }
+  
+  #second-img{
+    background-image: url('../img/gs-weights.png');
+    min-height: 500px;
+  }
+  
+  #third-img {
+    background-image: url('../img/trainers.png');
+    min-height: 500px;
+  }
+
+}
+
+@media screen and (orientation: portrait){
+
+  .first-img {
+    background-image: url('../img/gymshark-port.png');
+    min-height: 700px;
+  }
+  
+  #second-img{
+    background-image: url('../img/gs-weights-port.png');
+    min-height: 500px;
+  }
+  
+  #third-img {
+    background-image: url('../img/trainers-port.png');
+    min-height: 500px;
   }
 }
+
+
 
