@@ -88,7 +88,13 @@ const Card = ({ bodyAreas, exercise }) => {
       </div>
 
       <div className='infomation-container'>
-        <p>{exercise?.bodyAreas}</p>
+        <ul>
+          {bodyAreas.map((area) => {
+            return (
+              <li key={area}>{`${area}`}</li>
+            );
+          })}
+        </ul>
 
         <div className='titles'>
           <h2>{exercise?.name}</h2>

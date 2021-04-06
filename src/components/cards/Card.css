@@ -44,7 +44,7 @@
 .card-container > div.favourite-select {
   position: absolute;
   top: 365px;
-  left: 24px;
+  left: 32px;
   z-index: 1;
 }
 
@@ -62,14 +62,20 @@
   padding: 12px;
 }
 
+.card-container > div.infomation-container ul {
+  text-align: start;
+  list-style-type: none;
+}
+
 div.infomation-container > div.titles {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-div.infomation-container > div.titiles > h2 {
+div.infomation-container > div.titles > h2 {
   display: inline-block;
+  margin-left: 20px;
 }
 
 button.collapse {

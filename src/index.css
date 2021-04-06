@@ -59,3 +59,32 @@ button:focus {
 ul {
   padding: 0 0 0 20px;
 }
+
+/* SCROLL BAR */
+::-webkit-scrollbar {
+  height: 12px;
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  /* background: #edd0d0; */
+  background: var(--grey);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--greyBlueLight);
+  border-radius: 6px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--greyBlueDark);
+}
+
+.scroller {
+  scrollbar-color: var(--greyBlueLight) var(--grey);
+  scrollbar-highlight-color: var(--greyBlueDark);
+  scrollbar-width: thin;
+}

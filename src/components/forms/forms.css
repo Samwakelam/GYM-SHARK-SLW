@@ -39,7 +39,7 @@ form#search-bar {
 }
 
 form#search-bar > label {
-  padding: 15px;
+  padding: 15px 16px;
 }
 
 input#exercise-search {
