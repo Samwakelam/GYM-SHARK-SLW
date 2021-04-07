@@ -1,5 +1,5 @@
 // packages
-import React, { useEffect, useRef, useState, useContext } from 'react';
+import React, { useRef, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 // styles
 import './Home.css';
@@ -11,38 +11,13 @@ import ExerciseODay from '../components/module/ExerciseODay';
 
 const Home = ({exerciseData}) => {
 
-  // const [scrollPosition, setScrollPosition] = useState(0);
-  // console.log('scrollPosition', scrollPosition);
-
   const scroll = useRef(null);
   const { gender } = useContext(GenderContext);
-
-  // const parallaxProp = {
-  //   backgroundPosition: `50% ${scrollPosition}px`,
-  // }
-
-  // const handleScroll = (event) => {
-  //   if (scroll && scroll.current) {
-  //     const client = scroll.current.getBoundingClientRect();
-  //     // console.log('client =', client);
-  //     // const clientPosition = client.y;
-  //     // console.log('clientPosition =', clientPosition);
-  //     // setScrollPosition(Math.floor(clientPosition));
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   window.addEventListener('scroll', handleScroll);
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll);
-  //   }
-  // }, []);
-
+ 
   return (
     <section ref={scroll} id='home-content' >
       <div 
         className='first-img' 
-        // style={parallaxProp}
       > </div>
 
       <div id='welcome-titles'>
@@ -57,7 +32,6 @@ const Home = ({exerciseData}) => {
 
       <div 
         id='second-img' 
-        // style={parallaxProp}
       ></div>
 
       <div id='of-the-day'>
@@ -67,7 +41,6 @@ const Home = ({exerciseData}) => {
 
       <div 
         id='third-img' 
-        // style={parallaxProp}
       ></div>
 
       <div id='other-gymshark'>
