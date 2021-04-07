@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/GYM-SHARK-SLW/static/css/main.090ff865.chunk.css",
-    "main.js": "/GYM-SHARK-SLW/static/js/main.ba9c44b1.chunk.js",
-    "main.js.map": "/GYM-SHARK-SLW/static/js/main.ba9c44b1.chunk.js.map",
+    "main.css": "/GYM-SHARK-SLW/static/css/main.6fc4df64.chunk.css",
+    "main.js": "/GYM-SHARK-SLW/static/js/main.a2b84aae.chunk.js",
+    "main.js.map": "/GYM-SHARK-SLW/static/js/main.a2b84aae.chunk.js.map",
     "runtime-main.js": "/GYM-SHARK-SLW/static/js/runtime-main.949d666d.js",
     "runtime-main.js.map": "/GYM-SHARK-SLW/static/js/runtime-main.949d666d.js.map",
     "static/css/2.cc77c331.chunk.css": "/GYM-SHARK-SLW/static/css/2.cc77c331.chunk.css",
@@ -12,7 +12,7 @@
     "static/js/3.f65130cf.chunk.js.map": "/GYM-SHARK-SLW/static/js/3.f65130cf.chunk.js.map",
     "index.html": "/GYM-SHARK-SLW/index.html",
     "static/css/2.cc77c331.chunk.css.map": "/GYM-SHARK-SLW/static/css/2.cc77c331.chunk.css.map",
-    "static/css/main.090ff865.chunk.css.map": "/GYM-SHARK-SLW/static/css/main.090ff865.chunk.css.map",
+    "static/css/main.6fc4df64.chunk.css.map": "/GYM-SHARK-SLW/static/css/main.6fc4df64.chunk.css.map",
     "static/js/2.ec5c77c3.chunk.js.LICENSE.txt": "/GYM-SHARK-SLW/static/js/2.ec5c77c3.chunk.js.LICENSE.txt",
     "static/media/Home.css": "/GYM-SHARK-SLW/static/media/trainers.8fcd9860.png",
     "static/media/Help.css": "/GYM-SHARK-SLW/static/media/lifting-club.46b481ef.png"
@@ -21,7 +21,7 @@
     "static/js/runtime-main.949d666d.js",
     "static/css/2.cc77c331.chunk.css",
     "static/js/2.ec5c77c3.chunk.js",
-    "static/css/main.090ff865.chunk.css",
-    "static/js/main.ba9c44b1.chunk.js"
+    "static/css/main.6fc4df64.chunk.css",
+    "static/js/main.a2b84aae.chunk.js"
   ]
 }
