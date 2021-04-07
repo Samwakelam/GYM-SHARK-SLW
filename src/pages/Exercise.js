@@ -38,8 +38,13 @@ const Exercise = ({ exerciseData, type, numberOfX }) => {
   const handleSelect = (offsetTop, exercise) => {
     // console.log('offsetTop =', offsetTop);
     // console.log('exercise chosen is: ', exercise.name);
+    // console.log('document.body.offsetHeight =', document.body.scrollHeight);
+    const callLocation = Math.floor(offsetTop);
+    const bodyHeight = document.body.scrollHeight
+    const cardLocation = Math.min(callLocation, (bodyHeight - 900));
+    // console.log('cardLocation =', cardLocation);
     setSelectedExercise(exercise);
-    setSelectLocation(Math.floor(offsetTop));
+    setSelectLocation(cardLocation);
     setOpenModal(true);
   }
 
@@ -97,7 +102,7 @@ const Exercise = ({ exerciseData, type, numberOfX }) => {
     });
 
     thirdArray = secondArray.filter((exercise) => exercise.name.includes(inputValue));
-    console.log('thirdArray =', thirdArray);
+    // console.log('thirdArray =', thirdArray);
 
     const newArray = [...thirdArray];
     setTypeData(newArray);
