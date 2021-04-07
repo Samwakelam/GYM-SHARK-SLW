@@ -115,7 +115,7 @@ const Exercise = ({ exerciseData, type, numberOfX }) => {
 
       {typeData.length === 0
       ? null
-      :  <Pagination totalRecords={totalRecords} pageLimit={10} pageNeighbours={ isExtraSmall ? 0 : 1} onPageChanged={onPageChanged} />
+      :  <Pagination totalRecords={totalRecords} pageLimit={20} pageNeighbours={ isExtraSmall ? 0 : 1} onPageChanged={onPageChanged} />
       }
       
       <div className='exercises'>
