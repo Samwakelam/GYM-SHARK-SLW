@@ -171,6 +171,8 @@ Screenshots do not display fixed background styles and paralax effects.
 
 * Each page has access to the gender toggle which also demonstrates the `useContext` to tell all pages which gender has been selected. I have used this information through the application to highlight key elements and effects with gender specific colouration. 
 
+* I have demonstrated understanding of enviroment variables by hiding the API route in a dotenv file. 
+
 ---
 
 ## Further Development
