@@ -56,7 +56,7 @@ const Footer = () => {
           alt='samantha wakelam'
           src={`${process.env.PUBLIC_URL}/assets/Logo-2017-v2.jpg`}
         />
-        <button className={`${gender}`} ><a target='_blank' href='https://samwakelam.github.io/20_REACT_PORTFOLIO_SLW/#/' rel="noreferrer">Portfolio</a></button>
+        <button className={`${gender}`} ><a target='_blank' href='https://samwakelam.github.io/08_RESPONSIVE-PORTFOLIO_SLW/' rel="noreferrer">Portfolio</a></button>
         <div>
           <p>
             Graphics on this page have been created, and in some cases hand-drawn by Samantha Wakelam.
