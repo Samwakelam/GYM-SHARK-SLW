@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/GYM-SHARK-SLW/static/css/main.090ff865.chunk.css",
-    "main.js": "/GYM-SHARK-SLW/static/js/main.09229f50.chunk.js",
-    "main.js.map": "/GYM-SHARK-SLW/static/js/main.09229f50.chunk.js.map",
+    "main.js": "/GYM-SHARK-SLW/static/js/main.ba9c44b1.chunk.js",
+    "main.js.map": "/GYM-SHARK-SLW/static/js/main.ba9c44b1.chunk.js.map",
     "runtime-main.js": "/GYM-SHARK-SLW/static/js/runtime-main.949d666d.js",
     "runtime-main.js.map": "/GYM-SHARK-SLW/static/js/runtime-main.949d666d.js.map",
     "static/css/2.cc77c331.chunk.css": "/GYM-SHARK-SLW/static/css/2.cc77c331.chunk.css",
@@ -22,6 +22,6 @@
     "static/css/2.cc77c331.chunk.css",
     "static/js/2.ec5c77c3.chunk.js",
     "static/css/main.090ff865.chunk.css",
-    "static/js/main.09229f50.chunk.js"
+    "static/js/main.ba9c44b1.chunk.js"
   ]
 }
