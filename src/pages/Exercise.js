@@ -12,14 +12,19 @@ import Modal from '../components/module/Modal';
 import MuscelGroups from '../components/forms/MuscelGroups';
 import SearchBar from '../components/forms/SearchBar';
 import ExerciseNavbar from '../components/navigation/ExerciseNavbar';
+import Pagination from '../components/navigation/Pagination';
 
 
 const Exercise = ({ exerciseData, type, numberOfX }) => {
 
-  const { isMobileDevice } = useContext(MediaContext);
+  const { isExtraSmall, isMobileDevice } = useContext(MediaContext);
 
   // data state
   const [typeData, setTypeData] = useState([]);
+  const [currentExercises, setCurrentExercise] = useState([]);
+  const [currentPage, setCurrentPage] = useState(null);
+  const [totalPages, setTotalPages] = useState(null);
+  const [totalRecords, setTotalRecords] = useState(null);
   // modal State
   const [selectedExercise, setSelectedExercise] = useState('');
   const [openModal, setOpenModal] = useState(false);
@@ -27,6 +32,8 @@ const Exercise = ({ exerciseData, type, numberOfX }) => {
   // forms state
   const [selectValue, setSelectValue] = useState('all');
   const [inputValue, setInputValue] = useState('');
+
+  // console.log('currentExercise =', currentExercises);
 
   const handleSelect = (offsetTop, exercise) => {
     // console.log('offsetTop =', offsetTop);
@@ -49,13 +56,24 @@ const Exercise = ({ exerciseData, type, numberOfX }) => {
     setInputValue(value);
   }
 
+  const onPageChanged = (data) => {
+    const { currentPage, totalPages, pageLimit } = data;
+    // starting index for fetching the records for the current page
+    // (currentPage - 1) ensures offset is zero-based
+    const offset = (currentPage - 1) * pageLimit;
+    // extract the chunk of records from typeData with the offset  as the starting index
+    const currentExercises = typeData.slice(offset, offset + pageLimit);
+    setCurrentExercise(currentExercises);
+  }
+
+
   useEffect(() => {
     // data handling - filter dependent on different filters that have been selected
     let firstArray = [];
     let secondArray = [];
     let thirdArray = [];
 
-    if(type.includes('All')) {
+    if (type.includes('All')) {
       firstArray = [...exerciseData];
     } else {
       exerciseData.forEach((exercise) => {
@@ -80,9 +98,11 @@ const Exercise = ({ exerciseData, type, numberOfX }) => {
 
     setTypeData(thirdArray);
     numberOfX(thirdArray.length);
+    setTotalRecords(thirdArray.length);
 
   }, [exerciseData, type, numberOfX, selectValue, inputValue]);
 
+  // console.log('totalRecords =', totalRecords);
 
   return (
     <section id='exercise-content'>
@@ -93,10 +113,15 @@ const Exercise = ({ exerciseData, type, numberOfX }) => {
         <MuscelGroups onSelectChange={handleSelectChange} selectValue={selectValue} type={type} />
       </div>
 
-      <div>
-        {typeData.length === 0
+      {typeData.length === 0
+      ? null
+      :  <Pagination totalRecords={totalRecords} pageLimit={10} pageNeighbours={ isExtraSmall ? 0 : 1} onPageChanged={onPageChanged} />
+      }
+      
+      <div className='exercises'>
+        {currentExercises === 0
           ? <Loader />
-          : typeData.map((exercise) => {
+          : currentExercises.map((exercise) => {
             return (
               <PreviewCard
                 key={exercise?.id}

@@ -35,6 +35,12 @@ nav#top-nav > ul > li > a.female.active {
   color: var(--yellow);
 }
 
+@media screen and (max-width: 360px){
+  nav#top-nav > ul > li:last-child {
+    margin-right: 0px;
+  }
+}
+
 /* exercise Nav styles  */
 nav#exercise-navigation {
   position: relative;
@@ -98,6 +104,14 @@ img.body-area.female:active {
   border: 5px solid var(--yellow);
 }
 
+@media screen and (max-width: 576px){
+  nav#exercise-navigation {
+    position: absolute;
+  }
+}
+
+
+
 /* collapsed Nav */
 .collapse-dash-content {
   /* important for collapse */
@@ -141,8 +155,73 @@ button#collapsed-dash-menu {
   transform: rotate(45deg) translate(-9px, -7px);
 }
 
+
+/* Pagination styles */
+
+nav.nav-pagination {
+  position: absolute;
+  top: 14px;
+  left: 0;
+}
+
+ul.pagination {
+  list-style-type: none;
+}
+
+li.page-item {
+  display: inline;
+}
+
+li.page-item  > button {
+  border-radius: 0;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+li.page-item  > button:hover {
+  border-radius: 0;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+li.page-item:first-child  > button {
+  border-radius: 100px 0 0 100px;
+  padding-left: 20px;
+}
+
+li.page-item:last-child  > button {
+  border-radius: 0 100px 100px 0;
+  padding-right: 20px;
+}
+
+li.page-item.active.male > button {
+  background-color: var(--blue);
+  color: white;
+}
+
+li.page-item.active.female > button {
+  background-color: var(--yellow);
+  color: white;
+}
+
 @media screen and (max-width: 576px){
-  nav#exercise-navigation {
-    position: absolute;
+  nav.nav-pagination {
+    position: relative;
+    top: 0;
   }
+
+  ul.pagination {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 360px) {
+
+  nav.nav-pagination {
+    position: relative;
+    transform: translateX(10vw);
+  }
+
 }

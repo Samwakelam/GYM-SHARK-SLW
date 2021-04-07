@@ -3,6 +3,7 @@ section#exercise-content {
 
   position: relative;
   min-height: 100%;
+  max-width: 100%;
 
   background-image: linear-gradient(to bottom right, var(--greyBlueDark), var(--greyBlueLight) );
   padding: 12px;
@@ -13,7 +14,7 @@ section#exercise-content > div:nth-child(1) {
   justify-content: flex-end;
 }
 
-section#exercise-content > div:nth-child(2) {
+section#exercise-content > div.exercises {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -29,8 +30,12 @@ section#exercise-content > div:nth-child(2) {
     align-items: center;
   }
 
+}
+
+@media screen and (max-width: 360px) {
+
   select#bodyAreas-filter{
-    transform: translateX(20vw);
+    transform: translateX(15vw);
   }
 
 }

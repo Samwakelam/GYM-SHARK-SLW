@@ -56,7 +56,7 @@ const SearchBar = ({onInputChange, inputValue}) => {
   // console.log('inputValue.length =', inputValue.length);
 
   return(
-    <form id='search-bar' onMouseEnter={handleDisplayTrue} onMouseLeave={handleDisplayFalse} onTouch={handleDisplayTrue}>
+    <form id='search-bar' onMouseEnter={handleDisplayTrue} onMouseLeave={handleDisplayFalse} onTouchStart={handleDisplayTrue}>
       <input
         type='text'
         id='exercise-search'
