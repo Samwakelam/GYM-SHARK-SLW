@@ -22,8 +22,8 @@ const Pagination = ({ totalRecords, pageLimit, pageNeighbours, onPageChanged }) 
 
   const [currentPage, setCurrentPage] = useState(1);
   const [pages, setPages ] = useState([]);
-  console.log('pages =', pages);
-  console.log('currentPage =', currentPage);
+  // console.log('pages =', pages);
+  // console.log('currentPage =', currentPage);
 
   const { gender } = useContext(GenderContext);
 
@@ -35,11 +35,11 @@ const Pagination = ({ totalRecords, pageLimit, pageNeighbours, onPageChanged }) 
   pageNeighbours = typeof pageNeighbours === 'number'
     ? Math.max(0, Math.min(pageNeighbours, 2))
     : 0;
-  console.log('pageNeighbours =', pageNeighbours);
+  // console.log('pageNeighbours =', pageNeighbours);
   // Math.ceil ensures there is a page for any remaning records 
   // ie page limit 10, records 22 pages = 3
   const totalPages = Math.ceil(totalRecords / pageLimit);
-  console.log('totalPages =', totalPages);
+  // console.log('totalPages =', totalPages);
 
   const leftPage = 'left';
   const rightPage = 'right';
@@ -95,7 +95,7 @@ const Pagination = ({ totalRecords, pageLimit, pageNeighbours, onPageChanged }) 
   },[ currentPage, pageNeighbours, totalPages]);
 
   const goToPage = (page) => {
-    console.log('goToPage =', page); 
+    // console.log('goToPage =', page); 
     // Math.max, retrun the number with the highest value
     // Math.min, return the number with the lowest value
     // page cant be more or less that total pages or 0 respectivley.
@@ -109,22 +109,22 @@ const Pagination = ({ totalRecords, pageLimit, pageNeighbours, onPageChanged }) 
 
     setCurrentPage(currentPage); 
     onPageChanged(paginationData);
-  }
+  };
 
   const handleMoveLeft = (event) => {
     event.preventDefault();
-    console.log('move left currentPage =', currentPage);
+    // console.log('move left currentPage =', currentPage);
     goToPage(currentPage - (pageNeighbours * 2) - 1 );
   }
 
   const handleMoveRight = (event) => {
     event.preventDefault();
-    console.log('move right currentPage =', currentPage);
+    // console.log('move right currentPage =', currentPage);
     goToPage(currentPage + (pageNeighbours * 2) + 1 );
   }
 
   const handleClick = (page) => (event) => {
-    console.log('click page =', page);
+    // console.log('click page =', page);
     event.preventDefault();
     goToPage(page);
   }

@@ -21,21 +21,13 @@ const ExerciseODay = ({ exerciseData }) => {
   const [exercise, setExercise] = useState({});
   const [activeState, setActiveState] = useState('');
   const [contentHeight, setContentHeight] = useState('');
+  const [ bodyAreas, setBodyAreas ] = useState([]);
+
+  // console.log('bodyAreas =', bodyAreas);
 
   const { gender } = useContext(GenderContext);
   const { isExtraSmall, isMobileDevice, isSmallScreen, isTabletDevice, isDesktopDevice, isLargeScreen } = useContext(MediaContext);
   const content = useRef(null);
-
-  const bodyAreas = exercise?.bodyAreas;
-
-  const storedDate = getLocal('date');
-  const oldDate = new Date(storedDate);
-  // console.log('oldDate =', oldDate, typeof oldDate);
-  const existingExercise = getLocal('eod');
-  // console.log('existingExercise =', existingExercise);
-  const newDate = new Date();
-  // console.log('newDate =', newDate, typeof newDate);
-  // console.log('newDate === oldDate =', newDate.getDay() === oldDate.getDay() )
 
   const toggelCollapse = () => {
     setActiveState(activeState === '' ? 'active' : '');
@@ -47,7 +39,17 @@ const ExerciseODay = ({ exerciseData }) => {
 
   useEffect(() => {
 
+    const storedDate = getLocal('date');
+    const oldDate = new Date(storedDate);
+    // console.log('oldDate =', oldDate, typeof oldDate);
+    const existingExercise = getLocal('eod');
+    // console.log('existingExercise =', existingExercise);
+    const newDate = new Date();
+    // console.log('newDate =', newDate, typeof newDate);
+    // console.log('newDate === oldDate =', newDate.getDay() === oldDate.getDay() )
+    
     if (!existingExercise && exerciseData.length > 0) {
+      
       // console.log('nothing in storage');
       const index = Math.floor(Math.random() * 152);
       // console.log('index =', index);
@@ -68,6 +70,8 @@ const ExerciseODay = ({ exerciseData }) => {
       setExercise(exerciseData[indexNew]);
     }
 
+    setBodyAreas(exercise?.bodyAreas);
+
   }, [exerciseData]);
 
   // console.log('exercise =', exercise.id);
@@ -76,8 +80,8 @@ const ExerciseODay = ({ exerciseData }) => {
   return (
     <div id='exercise-o-day-content'>
       { (isMobileDevice) &&
-          <h2>{exercise?.name}</h2>
-        }
+        <h2>{exercise?.name}</h2>
+      }
       <div className='img-container'>
         <LazyLoad placeholder={<Placeholder height={'400px'} />} offset={100} debounce={500}>
           <img
@@ -89,7 +93,7 @@ const ExerciseODay = ({ exerciseData }) => {
       </div>
 
       <div className='information-container scroller'>
-        { (isSmallScreen || isTabletDevice || isDesktopDevice || isLargeScreen) &&
+        {(isSmallScreen || isTabletDevice || isDesktopDevice || isLargeScreen) &&
           <h2>{exercise?.name}</h2>
         }
         <ul>
@@ -107,7 +111,7 @@ const ExerciseODay = ({ exerciseData }) => {
             className={`collapse ${activeState}`}
             onClick={toggelCollapse}
           >
-            {isExtraSmall ? 'More Info': 'More Information'} <FontAwesomeIcon
+            {isExtraSmall ? 'More Info' : 'More Information'} <FontAwesomeIcon
               icon={activeState === 'active' ? faChevronUp : faChevronDown}
             />
           </button>

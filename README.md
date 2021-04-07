@@ -148,7 +148,7 @@ The Favourites Page displays a number of skills for front end development engine
 #### Help Page
 
 ![help page male](./public/assets/screenshots/help-page-blue.png)
-![help page female](./public/assets/screenshots/help-page-female.png)
+![help page female](./public/assets/screenshots/help-page-yellow.png)
 
 The Help Page displays a number of skills for front end development engineering.
 
@@ -162,7 +162,6 @@ The Help Page displays a number of skills for front end development engineering.
 
 ![responsive home page ](./public/assets/screenshots/home-page-responsive.png)
 ![responsive exercise page ](./public/assets/screenshots/exercise-page-responsive.png)
-![responsive fave page ](./public/assets/screenshots/fave-page-responsive.png)
 ![responsive help page ](./public/assets/screenshots/help-page-responsive.png)
 
 Screenshots do not display fixed background styles and paralax effects. 

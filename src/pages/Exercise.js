@@ -22,8 +22,8 @@ const Exercise = ({ exerciseData, type, numberOfX }) => {
   // data state
   const [typeData, setTypeData] = useState([]);
   const [currentExercises, setCurrentExercise] = useState([]);
-  const [currentPage, setCurrentPage] = useState(null);
-  const [totalPages, setTotalPages] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pageLimit, setPageLimit ] = useState(30);
   const [totalRecords, setTotalRecords] = useState(null);
   // modal State
   const [selectedExercise, setSelectedExercise] = useState('');
@@ -57,7 +57,9 @@ const Exercise = ({ exerciseData, type, numberOfX }) => {
   }
 
   const onPageChanged = (data) => {
-    const { currentPage, totalPages, pageLimit } = data;
+    const { currentPage, pageLimit } = data;
+    setCurrentPage(currentPage);
+    setPageLimit(pageLimit);
     // starting index for fetching the records for the current page
     // (currentPage - 1) ensures offset is zero-based
     const offset = (currentPage - 1) * pageLimit;
@@ -95,10 +97,13 @@ const Exercise = ({ exerciseData, type, numberOfX }) => {
     });
 
     thirdArray = secondArray.filter((exercise) => exercise.name.includes(inputValue));
+    console.log('thirdArray =', thirdArray);
 
-    setTypeData(thirdArray);
-    numberOfX(thirdArray.length);
-    setTotalRecords(thirdArray.length);
+    const newArray = [...thirdArray];
+    setTypeData(newArray);
+    numberOfX(newArray.length);
+    setTotalRecords(newArray.length);
+    onPageChanged({currentPage, pageLimit})
 
   }, [exerciseData, type, numberOfX, selectValue, inputValue]);
 
