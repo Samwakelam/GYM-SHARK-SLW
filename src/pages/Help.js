@@ -297,7 +297,7 @@ const Help = () => {
           </div>
           <p className='explanation centre'>
             The selector to the right will filter these options by muscle groups 
-            within exercise page you are currently on. This selector will show you 
+            within the exercise page you are currently on. This selector will show you 
             the muscle groups relevant to your current page. 
           </p>
           <div>
@@ -321,7 +321,7 @@ const Help = () => {
           <div className='explanation centre stack' >
           <p>
             In the banner at the top of the page, an indicator will show you how many 
-            exercise are shown on your page or in your search or filter selection.
+            exercises are shown on your page or in your search or filter selection.
           </p>
           <p>
             This indicator is also shown on the favourites page.

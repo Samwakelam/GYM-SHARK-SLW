@@ -37,6 +37,10 @@ div#exercise-o-day-content > div > ul > li {
   margin: 6px 0;
 }
 
+div#exercise-o-day-content > div > ol > li {
+  margin: 12px 0;
+}
+
 /* isMobileDevice */
 @media screen and (max-width: 576px){
 
