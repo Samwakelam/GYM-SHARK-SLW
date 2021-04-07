@@ -47,13 +47,13 @@ const SearchBar = ({onInputChange, inputValue}) => {
     event.preventDefault();
     const value = event.target.value;
     const formatValue = toTitleCase(value);
-    console.log('formatValue =', formatValue);
+    // console.log('formatValue =', formatValue);
     onInputChange(formatValue);
   }
 
-  console.log('inputValue =', inputValue);
-  console.log('inputValue !== =', inputValue !== '');
-  console.log('inputValue.length =', inputValue.length);
+  // console.log('inputValue =', inputValue);
+  // console.log('inputValue !== =', inputValue !== '');
+  // console.log('inputValue.length =', inputValue.length);
 
   return(
     <form 
