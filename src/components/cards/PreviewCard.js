@@ -9,8 +9,7 @@ import './PreviewCard.css';
 // context
 import GenderContext from '../../context/GenderContext';
 import MediaContext from '../../context/MediaContext';
-// functions
-import getLocal from '../../functions/getLocal';
+import FavouritesContext from '../../context/FavouritesContext';
 // components
 import Placeholder from '../module/Placeholder';
 
@@ -24,9 +23,10 @@ const PreviewCard = ({ bodyAreas, exercise, onSelect }) => {
   // context 
   const { gender } = useContext(GenderContext);
   const { isMobileDevice, isTabletDevice, isSmallScreen, isDesktopDevice, isLargeScreen } = useContext(MediaContext);
+  const { localFavourites } = useContext(FavouritesContext);
+  // console.log('localFavourites=', localFavourites);
 
-
-  const handelClick = () => {
+  const handelCardSelect = () => {
     // console.log('thisPreview.current =',thisPreview.current.offsetTop); 
     // this function uses reference hook to get the top edge location of the chosen preview card 
     // and sends it to the modal to position the large card on screen where 
@@ -36,19 +36,17 @@ const PreviewCard = ({ bodyAreas, exercise, onSelect }) => {
   }
 
   useEffect(() => {
-    const localFavourites = getLocal('fave');
     let isFavourite;
     // console.log('localFavourites =', localFavourites);
     if (localFavourites) {
       isFavourite = localFavourites.includes(exercise?.id);
     }
-    if (isFavourite) {
-      setFavourited(true);
-    }
-  }, [exercise?.id]);
+    setFavourited(isFavourite);
+    
+  }, [exercise?.id, localFavourites]);
 
   return (
-    <article ref={thisPreview} className='preview-card-container' onClick={handelClick}>
+    <article ref={thisPreview} className='preview-card-container' onClick={handelCardSelect}>
 
       <div className='img-container'>
         <LazyLoad placeholder={<Placeholder height={'200px'} width={'200px'} />} offset={100} debounce={500}>
