@@ -105,7 +105,7 @@ const Favourites = ({ exerciseData, numberOfX }) => {
 
 
   return (
-    <section ref={section} id='localFavourites-content' style={sectionStyle} >
+    <section ref={section} id='favourites-content' style={sectionStyle} >
       <div style={!localFavourites ? { flexFlow: 'column' } : { flexFlow: 'row', flexWrap: 'wrap' }}>
         {!localFavourites &&
           <>
