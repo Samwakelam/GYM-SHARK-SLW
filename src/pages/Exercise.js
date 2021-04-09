@@ -1,5 +1,5 @@
 // packages
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState, useContext, useRef } from 'react';
 // styles
 import './Exercise.css';
 // context
@@ -18,7 +18,7 @@ import Pagination from '../components/navigation/Pagination';
 const Exercise = ({ exerciseData, type, numberOfX }) => {
 
   const { isExtraSmall, isMobileDevice } = useContext(MediaContext);
-
+  const section = useRef(null);
   // data state
   const [typeData, setTypeData] = useState([]);
   const [currentExercises, setCurrentExercise] = useState([]);
@@ -28,28 +28,71 @@ const Exercise = ({ exerciseData, type, numberOfX }) => {
   // modal State
   const [selectedExercise, setSelectedExercise] = useState('');
   const [openModal, setOpenModal] = useState(false);
-  const [selectLocation, setSelectLocation] = useState('');
+  const [cardLocation, setCardLocation] = useState('');
   // forms state
   const [selectValue, setSelectValue] = useState('all');
   const [inputValue, setInputValue] = useState('');
-
-  // console.log('currentExercise =', currentExercises);
+  // style state
+  const [sectionStyleHeight, setSectionStyleHeight] = useState('100%');
+  
+  const sectionStyle = {
+    minHeight: sectionStyleHeight,
+  }
 
   const handleSelect = (offsetTop, exercise) => {
-    // console.log('offsetTop =', offsetTop);
     // console.log('exercise chosen is: ', exercise.name);
-    // console.log('document.body.offsetHeight =', document.body.scrollHeight);
     const callLocation = Math.floor(offsetTop);
-    const bodyHeight = document.body.scrollHeight
-    const cardLocation = Math.min(callLocation, (bodyHeight - 900));
-    // console.log('cardLocation =', cardLocation);
+    // console.log('offsetTop =', offsetTop);
+    const sectionHeight = section.current.offsetHeight;
+    // console.log('sectionHeight =', sectionHeight);
+    
+    let openLocation;
+    if((sectionHeight - 584) < 0 ) {
+      openLocation = 24;
+    } else if((sectionHeight - 584) > 0 && (sectionHeight - callLocation) < 584){
+      openLocation = sectionHeight - 24 - 584;
+    } else {
+      openLocation = callLocation;
+    }
+
+    if((sectionHeight + 24) < 584){
+      setSectionStyleHeight(`${584 + 48}px`);
+      // console.log('sectionStyle.minHeight =', sectionStyle.minHeight);
+    }
+    // console.log('openLocation =', openLocation);
     setSelectedExercise(exercise);
-    setSelectLocation(cardLocation);
+    setCardLocation(openLocation);
     setOpenModal(true);
+  }
+
+  const handleCardHeightChange = (cardHeight) => {
+    // console.log('cardHeight =', cardHeight);
+    // console.log('cardLocation =', cardLocation);
+    const sectionHeight = section.current.offsetHeight;
+    // console.log('sectionHeight =', sectionHeight);
+
+    let openLocation; 
+    if ((cardHeight > sectionHeight) && (sectionHeight - cardLocation) > cardHeight && cardHeight !== 560){
+      // console.log('1');
+      setSectionStyleHeight(`${(cardHeight + cardLocation + 48)}px`);
+    } else if((cardHeight < sectionHeight) && (sectionHeight - cardLocation) < cardHeight && cardHeight !== 560){
+      // console.log('2');
+      openLocation = sectionHeight - 48 - cardHeight;
+    } else if ((cardHeight < sectionHeight && (sectionHeight - cardLocation) > cardHeight && cardHeight !== 560)){
+      // console.log('3');
+      setSectionStyleHeight(`${(cardHeight + cardLocation + 48)}px`);
+    } else if ((cardHeight > sectionHeight) && (sectionHeight - cardLocation) < cardHeight && cardHeight !== 560){
+      setSectionStyleHeight(`${(cardHeight + cardLocation + 48)}px`);
+    } else if (cardHeight < sectionHeight && cardHeight === 560){
+      setSectionStyleHeight(`${cardHeight + 72}px`);
+    }
+
+    setCardLocation(openLocation);
   }
 
   const handleModalClose = () => {
     setOpenModal(false);
+    setSectionStyleHeight('100%');
   }
 
   const handleSelectChange = (value) => {
@@ -72,7 +115,6 @@ const Exercise = ({ exerciseData, type, numberOfX }) => {
     const currentExercises = typeData.slice(offset, offset + pageLimit);
     setCurrentExercise(currentExercises);
   }
-
 
   useEffect(() => {
     // data handling - filter dependent on different filters that have been selected
@@ -115,7 +157,7 @@ const Exercise = ({ exerciseData, type, numberOfX }) => {
   // console.log('totalRecords =', totalRecords);
 
   return (
-    <section id='exercise-content'>
+    <section ref={section} id='exercise-content' style={sectionStyle}>
       {isMobileDevice &&
         <ExerciseNavbar />
       }
@@ -145,8 +187,8 @@ const Exercise = ({ exerciseData, type, numberOfX }) => {
       </div>
 
       {openModal &&
-        <Modal onClose={handleModalClose} openLocation={selectLocation}>
-          <Card bodyAreas={selectedExercise?.bodyAreas} exercise={selectedExercise} />
+        <Modal onClose={handleModalClose} openLocation={cardLocation}>
+          <Card bodyAreas={selectedExercise?.bodyAreas} exercise={selectedExercise} cardHeight={handleCardHeightChange}/>
         </Modal>}
 
       <SearchBar onInputChange={handleInputChange} inputValue={inputValue} />

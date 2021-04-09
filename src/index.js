@@ -6,6 +6,7 @@ import App from './App/App';
 // Context
 import { GenderContextProvider } from './context/GenderContext';
 import { MediaContextProvider } from './context/MediaContext';
+import { FavouritesContextProvider } from './context/FavouritesContext';
 // Other
 import reportWebVitals from './other/reportWebVitals';
 // System Styles
@@ -16,7 +17,9 @@ ReactDOM.render(
   <React.StrictMode>
     <MediaContextProvider >
       <GenderContextProvider>
-        <App />
+        <FavouritesContextProvider >
+          <App />
+        </FavouritesContextProvider>
       </GenderContextProvider>
     </MediaContextProvider>
   </React.StrictMode>,

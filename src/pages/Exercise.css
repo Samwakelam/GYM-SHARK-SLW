@@ -5,6 +5,9 @@ section#exercise-content {
   min-height: 100%;
   max-width: 100%;
 
+  /* same as collapse */
+  transition: 0.2s ease-out;
+
   background-image: linear-gradient(to bottom right, var(--greyBlueDark), var(--greyBlueLight) );
   padding: 12px;
 }

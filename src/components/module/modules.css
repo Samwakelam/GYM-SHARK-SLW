@@ -17,7 +17,7 @@ div#overlay {
 
 div#location-container {
   position: absolute;
-  z-index: 4;
+  /* z-index: 4; */
 }
 
 /* placeholder styles  */

@@ -9,15 +9,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './Card.css';
 // context
 import GenderContext from '../../context/GenderContext';
-// functions
-import saveLocal from '../../functions/saveLocal';
-import getLocal from '../../functions/getLocal';
-import removeLocal from '../../functions/removeLocal';
+import FavouritesContext from '../../context/FavouritesContext';
 // components
 import Placeholder from '../module/Placeholder';
 
 
-const Card = ({ bodyAreas, exercise }) => {
+const Card = ({ bodyAreas, exercise, cardHeight }) => {
 
   // state
   const [activeState, setActiveState] = useState('');
@@ -27,46 +24,35 @@ const Card = ({ bodyAreas, exercise }) => {
   const content = useRef(null);
   // context 
   const { gender } = useContext(GenderContext);
-
+  const { localFavourites, updateFavourites } = useContext(FavouritesContext);
 
   const toggelCollapse = () => {
+    
     setActiveState(activeState === '' ? 'active' : '');
-
     setContentHeight(
       activeState === "active" ? "0px" : `${content.current.scrollHeight}px`
+    );
+    cardHeight(
+      activeState === "active" ? 560 : (560 + content.current.scrollHeight)
     );
   }
 
   const makeFavourite = () => {
-    const localFavourites = getLocal('fave');
     // console.log('localFavourites =', localFavourites, typeof localFavourites);
-
-    if (favourited) {
-      // console.log('remove from favourites');
-      removeLocal('fave', exercise?.id);
-
-    } else if (!favourited && !localFavourites) {
-      saveLocal('fave', [exercise?.id]);
-
-    } else if (!favourited && localFavourites) {
-      localFavourites.push(exercise?.id);
-      saveLocal('fave', localFavourites);
-    }
-
+    updateFavourites(favourited, exercise);
     setFavourited(favourited ? false : true);
   }
 
   useEffect(() => {
-    const localFavourites = getLocal('fave');
     let isFavourite;
     // console.log('localFavourites =', localFavourites);
     if (localFavourites) {
       isFavourite = localFavourites.includes(exercise?.id);
     }
-    if (isFavourite) {
-      setFavourited(true);
-    }
-  }, [exercise?.id]);
+    setFavourited(isFavourite);
+    
+  }, [exercise?.id, localFavourites]);
+
 
   return (
     <article className='card-container' >

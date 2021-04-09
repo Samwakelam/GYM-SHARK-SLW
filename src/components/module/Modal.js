@@ -18,7 +18,7 @@ const Modal = ({ children, onClose, openLocation }) => {
 
   return (
     <div id='overlay' onClick={handelClick}>
-      <div id='location-container' style={{top: `${openLocation}px`}}>
+      <div id='location-container' style={{top: `${openLocation}px`, transition: '0.2s ease-out'}}>
         {children}
       </div>
     </div>
